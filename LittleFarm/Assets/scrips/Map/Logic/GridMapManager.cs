@@ -86,6 +86,8 @@ namespace MFarm.Map
             currentGrid = FindObjectOfType<Grid>();
             digTilemap = GameObject.FindWithTag("Dig").GetComponent<Tilemap>();
             waterTilemap = GameObject.FindWithTag("Water").GetComponent<Tilemap>();
+
+            DisplayMap(SceneManager.GetActiveScene().name);
         }
         private void OnExecuteActionAfterAnimation(Vector3 mouseWorldPos,ItemDetails itemDetails)
         {
@@ -113,6 +115,7 @@ namespace MFarm.Map
                         // ÒôÐ§
                         break;
                 }
+                UpdateTileDetails(currentTile);
             }
         }
 
@@ -136,6 +139,36 @@ namespace MFarm.Map
             Vector3Int pos = new Vector3Int(tile.gridX, tile.gridY, 0);
             if (waterTilemap != null)
                 waterTilemap.SetTile(pos, waterTile);
+        }
+        public void UpdateTileDetails(TileDetails tileDetails)
+        {
+            string key = tileDetails.gridX + "x" + tileDetails.gridY + "y" + SceneManager.GetActiveScene().name;
+            if (tileDetailsDict.ContainsKey(key))
+            {
+                tileDetailsDict[key] = tileDetails;
+            }
+            /*else
+            {
+                tileDetailsDict.Add(key, tileDetails);
+            }*/
+        }
+        private void DisplayMap(string sceneName)
+        {
+            foreach (var tile in tileDetailsDict)
+            {
+                var key = tile.Key;
+                var tileDetails = tile.Value;
+
+                if (key.Contains(sceneName))
+                {
+                    if (tileDetails.daySinceDug > -1)
+                        SetDigGround(tileDetails);
+                    if (tileDetails.daysSinceWatered > -1)
+                        SetWaterGround(tileDetails);
+                    /*if (tileDetails.seedItemID > -1)
+                        EventHandler.CallPlantSeedEvent(tileDetails.seedItemID, tileDetails);*/
+                }
+            }
         }
     }
 }
