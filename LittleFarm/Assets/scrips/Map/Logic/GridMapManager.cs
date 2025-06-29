@@ -107,6 +107,11 @@ namespace MFarm.Map
                         currentTile.canDropItem = false;
                         // “Ù–ß
                         break;
+                    case ItemType.WaterTool:
+                        SetWaterGround(currentTile);
+                        currentTile.daysSinceWatered = 0;
+                        // “Ù–ß
+                        break;
                 }
             }
         }

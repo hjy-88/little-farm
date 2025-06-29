@@ -147,6 +147,9 @@ public class CursorManager : MonoBehaviour
                     if (currentTile.canDig) SetCursorValid();
                     else SetCursorInvalid();
                     break;
+                case ItemType.WaterTool:
+                    if ((currentTile.daySinceDug > -1 && currentTile.daysSinceWatered == -1)) SetCursorValid(); else SetCursorInvalid();
+                    break;
             }
 
         }
