@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - ItemParent
+  - CursorCanvas
+  - Water
+  - Dig
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Ocean
+    uniqueID: 3027087699
+    locked: 0
+  - name: GroundBottom
+    uniqueID: 2376069975
+    locked: 0
+  - name: GroundMiddle
+    uniqueID: 3040950913
+    locked: 0
+  - name: GroundTop
+    uniqueID: 880339983
+    locked: 0
+  - name: Buildings
+    uniqueID: 3244219649
+    locked: 0
+  - name: Dig
+    uniqueID: 52738521
+    locked: 0
+  - name: Water
+    uniqueID: 2802999955
+    locked: 0
+  - name: Front1
+    uniqueID: 1453739135
+    locked: 0
+  - name: Front2
+    uniqueID: 2010594511
+    locked: 0
+  - name: Collision
+    uniqueID: 2822102853
+    locked: 0
+  - name: instance
+    uniqueID: 1179887317
+    locked: 0
