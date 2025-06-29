@@ -17,15 +17,18 @@ namespace MFarm.Map
         public List<MapData_SO> mapDataList;
         private Dictionary<string, TileDetails> tileDetailsDict = new Dictionary<string, TileDetails>();
         private Grid currentGrid;
+        private Season currentSeason;
         private void OnEnable()
         {
             EventHandler.ExecuteActionAfterAnimation += OnExecuteActionAfterAnimation;
             EventHandler.AfterSceneLoadedEvent += OnAfterSceneLoadedEvent;
+            EventHandler.GameDayEvent += OnGameDayEvent;
         }
         private void OnDisable()
         {
             EventHandler.ExecuteActionAfterAnimation -= OnExecuteActionAfterAnimation;
             EventHandler.AfterSceneLoadedEvent -= OnAfterSceneLoadedEvent;
+            EventHandler.GameDayEvent -= OnGameDayEvent;
         }
         private void Start()
         {
@@ -87,7 +90,37 @@ namespace MFarm.Map
             digTilemap = GameObject.FindWithTag("Dig").GetComponent<Tilemap>();
             waterTilemap = GameObject.FindWithTag("Water").GetComponent<Tilemap>();
 
-            DisplayMap(SceneManager.GetActiveScene().name);
+            //DisplayMap(SceneManager.GetActiveScene().name);
+            RefreshMap();
+        }
+        private void OnGameDayEvent(int day, Season season)
+        {
+            currentSeason = season;
+
+            foreach (var tile in tileDetailsDict)
+            {
+                if (tile.Value.daysSinceWatered > -1)
+                {
+                    tile.Value.daysSinceWatered = -1;
+                }
+                if (tile.Value.daySinceDug > -1)
+                {
+                    tile.Value.daySinceDug++;
+                }
+                //³¬ÆÚÏû³ýÍÚ¿Ó
+                if (tile.Value.daySinceDug > 5 && tile.Value.seedItemId == -1)
+                {
+                    tile.Value.daySinceDug = -1;
+                    tile.Value.canDig = true;
+                    //tile.Value.growthDays = -1;
+                }
+                /*if (tile.Value.seedItemId != -1)
+                {
+                    tile.Value.growthDays++;
+                }*/
+            }
+
+            RefreshMap();
         }
         private void OnExecuteActionAfterAnimation(Vector3 mouseWorldPos,ItemDetails itemDetails)
         {
@@ -151,6 +184,20 @@ namespace MFarm.Map
             {
                 tileDetailsDict.Add(key, tileDetails);
             }*/
+        }
+        private void RefreshMap()
+        {
+            if (digTilemap != null)
+                digTilemap.ClearAllTiles();
+            if (waterTilemap != null)
+                waterTilemap.ClearAllTiles();
+
+            /*foreach (var crop in FindObjectsOfType<Crop>())
+            {
+                Destroy(crop.gameObject);
+            }*/
+
+            DisplayMap(SceneManager.GetActiveScene().name);
         }
         private void DisplayMap(string sceneName)
         {
