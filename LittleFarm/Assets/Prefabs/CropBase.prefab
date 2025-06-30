@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 379795224373844132}
   - component: {fileID: 2758230866618468950}
-  - component: {fileID: 3046790684602979945}
+  - component: {fileID: -7206310830721205394}
   m_Layer: 0
   m_Name: CropBase
   m_TagString: Untagged
@@ -163,7 +163,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &3046790684602979945
+--- !u!114 &-7206310830721205394
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -172,20 +172,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 4040390630980143379}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3114838cfe485d489dfe0160ee61d67, type: 3}
+  m_Script: {fileID: 11500000, guid: c85aabb152e5b4c45870426f1cd15983, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 0
-  itemDetails:
-    itemID: 0
-    itemName: 
-    itemType: 0
-    itemIcon: {fileID: 0}
-    itemOnWorldSprite: {fileID: 0}
-    itemDescription: 
-    itemUseRadius: 0
-    canPickedup: 0
-    canDropped: 0
-    canCarried: 0
-    itemPrice: 0
-    sellPercentage: 0

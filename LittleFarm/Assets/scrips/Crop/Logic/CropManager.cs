@@ -77,7 +77,7 @@ namespace MFarm.CropPlant
                 }
                 dayCounter -= cropDetails.growthDays[i];
             }
-            Debug.Log($"GrowthDays: {tileDetails.growthDays}, CurrentStage: {currentStage}");
+            
             GameObject cropPrefab = cropDetails.growthPrefabs[currentStage];
             Sprite cropSprite = cropDetails.growthSprites[currentStage];
 
@@ -85,7 +85,7 @@ namespace MFarm.CropPlant
 
             GameObject cropInstance = Instantiate(cropPrefab, pos, Quaternion.identity, cropParent);
             cropInstance.GetComponentInChildren<SpriteRenderer>().sprite = cropSprite;
-
+            //Debug.Log(tileDetails.seedItemId);
             /*cropInstance.GetComponent<Crop>().cropDetails = cropDetails;
             cropInstance.GetComponent<Crop>().tileDetails = tileDetails;*/
         }

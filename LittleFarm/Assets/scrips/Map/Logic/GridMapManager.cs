@@ -107,17 +107,16 @@ namespace MFarm.Map
                 {
                     tile.Value.daySinceDug++;
                 }
-                //³¬ÆÚÏû³ýÍÚ¿Ó
                 if (tile.Value.daySinceDug > 5 && tile.Value.seedItemId == -1)
                 {
                     tile.Value.daySinceDug = -1;
                     tile.Value.canDig = true;
-                    //tile.Value.growthDays = -1;
+                    tile.Value.growthDays = -1;
                 }
-                /*if (tile.Value.seedItemId != -1)
+                if (tile.Value.seedItemId != -1)
                 {
                     tile.Value.growthDays++;
-                }*/
+                }
             }
 
             RefreshMap();
@@ -134,9 +133,10 @@ namespace MFarm.Map
                 {
                     case ItemType.Seed:
                         EventHandler.CallPlantSeedEvent(itemDetails.itemID, currentTile);
+                        EventHandler.CallDropItemEvent(itemDetails.itemID, mouseWorldPos,itemDetails.itemType);
                         break;
                     case ItemType.Commodity:
-                        EventHandler.CallDropItemEvent(itemDetails.itemID, mouseWorldPos);
+                        EventHandler.CallDropItemEvent(itemDetails.itemID, mouseWorldPos,itemDetails.itemType);
                         break;
                     case ItemType.HoeTool:
                         SetDigGround(currentTile);
@@ -195,10 +195,10 @@ namespace MFarm.Map
             if (waterTilemap != null)
                 waterTilemap.ClearAllTiles();
 
-            /*foreach (var crop in FindObjectsOfType<Crop>())
+            foreach (var crop in FindObjectsOfType<Crop>())
             {
                 Destroy(crop.gameObject);
-            }*/
+            }
 
             DisplayMap(SceneManager.GetActiveScene().name);
         }
@@ -215,8 +215,8 @@ namespace MFarm.Map
                         SetDigGround(tileDetails);
                     if (tileDetails.daysSinceWatered > -1)
                         SetWaterGround(tileDetails);
-                    /*if (tileDetails.seedItemID > -1)
-                        EventHandler.CallPlantSeedEvent(tileDetails.seedItemID, tileDetails);*/
+                    if (tileDetails.seedItemId > -1)
+                        EventHandler.CallPlantSeedEvent(tileDetails.seedItemId, tileDetails);
                 }
             }
         }
