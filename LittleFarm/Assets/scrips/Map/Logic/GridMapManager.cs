@@ -150,9 +150,29 @@ namespace MFarm.Map
                         currentTile.daysSinceWatered = 0;
                         // “Ù–ß
                         break;
+                    case ItemType.CollectTool:
+                        /*currentCrop.ProcessToolAction(itemDetails, currentTile);
+                        EventHandler.CallPlaySoundEvent(SoundName.Basket);*/
+                        Crop currentCrop = GetCropObject(mouseWorldPos);
+                        if (currentCrop != null)
+                            Debug.Log(currentCrop.cropDetails.seedItemID);
+                        break;
                 }
                 UpdateTileDetails(currentTile);
             }
+        }
+        public Crop GetCropObject(Vector3 mouseWorldPos)
+        {
+            Collider2D[] colliders = Physics2D.OverlapPointAll(mouseWorldPos);
+
+            Crop currentCrop = null;
+
+            for (int i = 0; i < colliders.Length; i++)
+            {
+                if (colliders[i].GetComponent<Crop>())
+                    currentCrop = colliders[i].GetComponent<Crop>();
+            }
+            return currentCrop;
         }
 
         /// <summary>

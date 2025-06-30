@@ -86,8 +86,8 @@ namespace MFarm.CropPlant
             GameObject cropInstance = Instantiate(cropPrefab, pos, Quaternion.identity, cropParent);
             cropInstance.GetComponentInChildren<SpriteRenderer>().sprite = cropSprite;
             //Debug.Log(tileDetails.seedItemId);
-            /*cropInstance.GetComponent<Crop>().cropDetails = cropDetails;
-            cropInstance.GetComponent<Crop>().tileDetails = tileDetails;*/
+            cropInstance.GetComponent<Crop>().cropDetails = cropDetails;
+            //cropInstance.GetComponent<Crop>().tileDetails = tileDetails;
         }
 
 
