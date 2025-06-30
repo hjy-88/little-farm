@@ -151,11 +151,11 @@ namespace MFarm.Map
                         // “Ù–ß
                         break;
                     case ItemType.CollectTool:
-                        /*currentCrop.ProcessToolAction(itemDetails, currentTile);
-                        EventHandler.CallPlaySoundEvent(SoundName.Basket);*/
                         Crop currentCrop = GetCropObject(mouseWorldPos);
-                        if (currentCrop != null)
-                            Debug.Log(currentCrop.cropDetails.seedItemID);
+                        currentCrop.ProcessToolAction(itemDetails, currentTile);
+                        //EventHandler.CallPlaySoundEvent(SoundName.Basket); 
+                        /*if (currentCrop != null)
+                            Debug.Log(currentCrop.cropDetails.seedItemID);*/
                         break;
                 }
                 UpdateTileDetails(currentTile);

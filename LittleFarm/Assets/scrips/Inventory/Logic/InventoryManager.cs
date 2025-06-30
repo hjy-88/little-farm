@@ -18,10 +18,12 @@ namespace MFarm.Inventory
         private void OnEnable()
         {
             EventHandler.DropItemEvent += OnDropItemEvent;
+            EventHandler.HarvestAtPlayerPosition += OnHarvestAtPlayerPosition;
         }
         private void OnDisable()
         {
             EventHandler.DropItemEvent -= OnDropItemEvent;
+            EventHandler.HarvestAtPlayerPosition -= OnHarvestAtPlayerPosition;
         }
         private void Start()
         {
@@ -180,5 +182,12 @@ namespace MFarm.Inventory
             //Ë¢ÐÂUI
             EventHandler.CallUpdateInventoryUI(InventoryLocation.Player, playerBag.itemList);
         }
+        private void OnHarvestAtPlayerPosition(int ID)
+        {
+            var index = GetItemIndexInBag(ID);
+            AddItemAtIndex(ID, index, 1);
+            EventHandler.CallUpdateInventoryUI(InventoryLocation.Player, playerBag.itemList);
+        }
     }
+
 }

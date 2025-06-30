@@ -5,29 +5,27 @@ using UnityEngine;
 public class Crop : MonoBehaviour
 {
     public CropDetails cropDetails;
-    /*public TileDetails tileDetails;
+    //public TileDetails tileDetails;
     private int harvestActionCount;
-    public bool CanHarvest => tileDetails.growthDays >= cropDetails.TotalGrowthDays;
+    /*public bool CanHarvest => tileDetails.growthDays >= cropDetails.TotalGrowthDays;
 
     private Animator anim;
 
     private Transform PlayerTransform => FindObjectOfType<Player>().transform;
-
+    */
     public void ProcessToolAction(ItemDetails tool, TileDetails tile)
     {
-        tileDetails = tile;
-
-        //工具使用次数
+        //tileDetails = tile;
         int requireActionCount = cropDetails.GetTotalRequireCount(tool.itemID);
         if (requireActionCount == -1) return;
 
-        anim = GetComponentInChildren<Animator>();
+        //anim = GetComponentInChildren<Animator>();
 
         //点击计数器
         if (harvestActionCount < requireActionCount)
         {
             harvestActionCount++;
-
+            /*
             //判断是否有动画 树木
             if (anim != null && cropDetails.hasAnimation)
             {
@@ -43,17 +41,16 @@ public class Crop : MonoBehaviour
             if (cropDetails.soundEffect != SoundName.none)
             {
                 EventHandler.CallPlaySoundEvent(cropDetails.soundEffect);
-            }
+            }*/
         }
 
         if (harvestActionCount >= requireActionCount)
         {
             if (cropDetails.generateAtPlayerPosition || !cropDetails.hasAnimation)
             {
-                //生成农作物
                 SpawnHarvestItems();
             }
-            else if (cropDetails.hasAnimation)
+            /*else if (cropDetails.hasAnimation)
             {
                 if (PlayerTransform.position.x < transform.position.x)
                     anim.SetTrigger("FallingRight");
@@ -61,10 +58,10 @@ public class Crop : MonoBehaviour
                     anim.SetTrigger("FallingLeft");
                 EventHandler.CallPlaySoundEvent(SoundName.TreeFalling);
                 StartCoroutine(HarvestAfterAnimation());
-            }
+            }*/
         }
     }
-
+    /*
     private IEnumerator HarvestAfterAnimation()
     {
         while (!anim.GetCurrentAnimatorStateInfo(0).IsName("END"))
@@ -88,10 +85,7 @@ public class Crop : MonoBehaviour
 
         EventHandler.CallRefreshCurrentMap();
     }
-
-    /// <summary>
-    /// 生成果实
-    /// </summary>
+    */
     public void SpawnHarvestItems()
     {
         for (int i = 0; i < cropDetails.producedItemID.Length; i++)
@@ -100,22 +94,18 @@ public class Crop : MonoBehaviour
 
             if (cropDetails.producedMinAmount[i] == cropDetails.producedMaxAmount[i])
             {
-                //代表只生成指定数量的
                 amountToProduce = cropDetails.producedMinAmount[i];
             }
-            else    //物品随机数量
+            else
             {
                 amountToProduce = Random.Range(cropDetails.producedMinAmount[i], cropDetails.producedMaxAmount[i] + 1);
             }
 
-            //执行生成指定数量的物品
             for (int j = 0; j < amountToProduce; j++)
             {
                 if (cropDetails.generateAtPlayerPosition)
-                {
                     EventHandler.CallHarvestAtPlayerPosition(cropDetails.producedItemID[i]);
-                }
-                else    //世界地图上生成物品
+                /*else    //世界地图上生成物品
                 {
                     //判断应该生成的物品方向
                     var dirX = transform.position.x > PlayerTransform.position.x ? 1 : -1;
@@ -124,11 +114,11 @@ public class Crop : MonoBehaviour
                     transform.position.y + Random.Range(-cropDetails.spawnRadius.y, cropDetails.spawnRadius.y), 0);
 
                     EventHandler.CallInstantiateItemInScene(cropDetails.producedItemID[i], spawnPos);
-                }
+                }*/
             }
         }
 
-        if (tileDetails != null)
+       /* if (tileDetails != null)
         {
             tileDetails.daysSinceLastHarvest++;
 
@@ -148,7 +138,7 @@ public class Crop : MonoBehaviour
             }
 
             Destroy(gameObject);
-        }
+        }*/
 
-    }*/
+    }
 }

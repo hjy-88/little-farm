@@ -54,12 +54,8 @@ public class CropDetails
     /*public ParticleEffectType particleEffectType;
     public Vector3 particleEffectTypePos;
     public SoundName soundEffect;
+    */
 
-    /// <summary>
-    /// 检查当前工具是否可用
-    /// </summary>
-    /// <param name="toolID">工具ID</param>
-    /// <returns></returns>
     public bool CheckToolAvailable(int toolID)
     {
         foreach (var tool in harvestToolItemID)
@@ -70,11 +66,6 @@ public class CropDetails
         return false;
     }
 
-    /// <summary>
-    /// 获得工具需要使用的次数
-    /// </summary>
-    /// <param name="toolID">工具ID</param>
-    /// <returns></returns>
     public int GetTotalRequireCount(int toolID)
     {
         for (int i = 0; i < harvestToolItemID.Length; i++)
@@ -83,5 +74,5 @@ public class CropDetails
                 return requireActionCount[i];
         }
         return -1;
-    }*/
+    }
 }
