@@ -113,4 +113,10 @@ public static class EventHandler
     {
         ShowTradeUI?.Invoke(item, isSell);
     }
+
+    public static event Action<int, TileDetails> PlantSeedEvent;
+    public static void CallPlantSeedEvent(int ID, TileDetails tile)
+    {
+        PlantSeedEvent?.Invoke(ID, tile);
+    }
 }
