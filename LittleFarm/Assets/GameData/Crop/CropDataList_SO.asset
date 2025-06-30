@@ -26,7 +26,7 @@ MonoBehaviour:
     - {fileID: 1339113859, guid: 95ed2c725fbec92439db73cf9aefff5f, type: 3}
     - {fileID: 2117339167, guid: 95ed2c725fbec92439db73cf9aefff5f, type: 3}
     seasons: 0000000001000000
-    harvestToolItemID: 00000000
+    harvestToolItemID: f1030000
     requireActionCount: 01000000
     transferItemID: 0
     producedItemID: eb030000
@@ -41,17 +41,17 @@ MonoBehaviour:
   - seedItemID: 1007
     growthDays: 01000000020000000200000001000000
     growthPrefabs:
-    - {fileID: 1884957211104241367, guid: fbecf778b6da2b84da42ef89a040bb1d, type: 3}
-    - {fileID: 1884957211104241367, guid: fbecf778b6da2b84da42ef89a040bb1d, type: 3}
-    - {fileID: 1884957211104241367, guid: fbecf778b6da2b84da42ef89a040bb1d, type: 3}
-    - {fileID: 1884957211104241367, guid: fbecf778b6da2b84da42ef89a040bb1d, type: 3}
+    - {fileID: 4040390630980143379, guid: ec422a5d771daa54b8ac1a7d8834181a, type: 3}
+    - {fileID: 4040390630980143379, guid: ec422a5d771daa54b8ac1a7d8834181a, type: 3}
+    - {fileID: 4040390630980143379, guid: ec422a5d771daa54b8ac1a7d8834181a, type: 3}
+    - {fileID: 4040390630980143379, guid: ec422a5d771daa54b8ac1a7d8834181a, type: 3}
     growthSprites:
     - {fileID: 1802088919, guid: 95ed2c725fbec92439db73cf9aefff5f, type: 3}
     - {fileID: 1536752976, guid: 95ed2c725fbec92439db73cf9aefff5f, type: 3}
     - {fileID: 666480621, guid: 95ed2c725fbec92439db73cf9aefff5f, type: 3}
     - {fileID: -1375446654, guid: 95ed2c725fbec92439db73cf9aefff5f, type: 3}
     seasons: 000000000100000002000000
-    harvestToolItemID: 00000000
+    harvestToolItemID: f1030000
     requireActionCount: 01000000
     transferItemID: 0
     producedItemID: f0030000

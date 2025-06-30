@@ -5,7 +5,7 @@ using UnityEngine;
 public class Crop : MonoBehaviour
 {
     public CropDetails cropDetails;
-    //public TileDetails tileDetails;
+    public TileDetails tileDetails;
     private int harvestActionCount;
     /*public bool CanHarvest => tileDetails.growthDays >= cropDetails.TotalGrowthDays;
 
@@ -15,7 +15,7 @@ public class Crop : MonoBehaviour
     */
     public void ProcessToolAction(ItemDetails tool, TileDetails tile)
     {
-        //tileDetails = tile;
+        tileDetails = tile;
         int requireActionCount = cropDetails.GetTotalRequireCount(tool.itemID);
         if (requireActionCount == -1) return;
 
@@ -105,40 +105,36 @@ public class Crop : MonoBehaviour
             {
                 if (cropDetails.generateAtPlayerPosition)
                     EventHandler.CallHarvestAtPlayerPosition(cropDetails.producedItemID[i]);
-                /*else    //世界地图上生成物品
-                {
+                else
+                {/*
                     //判断应该生成的物品方向
                     var dirX = transform.position.x > PlayerTransform.position.x ? 1 : -1;
                     //一定范围内的随机
                     var spawnPos = new Vector3(transform.position.x + Random.Range(dirX, cropDetails.spawnRadius.x * dirX),
                     transform.position.y + Random.Range(-cropDetails.spawnRadius.y, cropDetails.spawnRadius.y), 0);
 
-                    EventHandler.CallInstantiateItemInScene(cropDetails.producedItemID[i], spawnPos);
-                }*/
+                    EventHandler.CallInstantiateItemInScene(cropDetails.producedItemID[i], spawnPos);*/
+                }
             }
         }
 
-       /* if (tileDetails != null)
+        if (tileDetails != null)
         {
-            tileDetails.daysSinceLastHarvest++;
+            tileDetails.daysSinceLastHarvset++;
 
-            //是否可以重复生长
-            if (cropDetails.daysToRegrow > 0 && tileDetails.daysSinceLastHarvest < cropDetails.regrowTimes - 1)
+            if (cropDetails.daysToRegrow > 0 && tileDetails.daysSinceLastHarvset < cropDetails.regrowTimes - 1)
             {
                 tileDetails.growthDays = cropDetails.TotalGrowthDays - cropDetails.daysToRegrow;
-                //刷新种子
                 EventHandler.CallRefreshCurrentMap();
             }
-            else    //不可重复生长
+            else
             {
-                tileDetails.daysSinceLastHarvest = -1;
-                tileDetails.seedItemID = -1;
-                //FIXME:自己设计
-                // tileDetails.daysSinceDug = -1;
+                tileDetails.daysSinceLastHarvset = -1;
+                tileDetails.seedItemId = -1;
             }
 
             Destroy(gameObject);
-        }*/
+        }
 
     }
 }
