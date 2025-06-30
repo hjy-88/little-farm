@@ -50,8 +50,10 @@ namespace MFarm.CropPlant
             CropDetails currentCrop = GetCropDetails(ID);
             if (currentCrop != null && SeasonAvailable(currentCrop) && tileDetails.seedItemId == -1)
             {
+                
                 tileDetails.seedItemId = ID;
                 tileDetails.growthDays = 0;
+                //Debug.Log(tileDetails.seedItemId);
                 DisplayCropPlant(tileDetails, currentCrop);
             }
             else if (tileDetails.seedItemId != -1)
@@ -75,7 +77,7 @@ namespace MFarm.CropPlant
                 }
                 dayCounter -= cropDetails.growthDays[i];
             }
-
+            Debug.Log($"GrowthDays: {tileDetails.growthDays}, CurrentStage: {currentStage}");
             GameObject cropPrefab = cropDetails.growthPrefabs[currentStage];
             Sprite cropSprite = cropDetails.growthSprites[currentStage];
 
@@ -91,6 +93,7 @@ namespace MFarm.CropPlant
 
         public CropDetails GetCropDetails(int ID)
         {
+            //Debug.Log(ID);
             return cropData.cropDetailsList.Find(c => c.seedItemID == ID);
         }
 
