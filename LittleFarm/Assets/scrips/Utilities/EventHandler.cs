@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using MFarm.Dialogue;
+
 public static class EventHandler
 {
     public static event Action<InventoryLocation, List<InventoryItem>> UpdateInventoryUI;
@@ -75,5 +77,40 @@ public static class EventHandler
     public static void CallExecuteActionAfterAnimation(Vector3 pos, ItemDetails itemDetails)
     {
         ExecuteActionAfterAnimation?.Invoke(pos, itemDetails);
+    }
+
+    //商店开启
+    public static event Action<SlotType, InventoryBag_SO> BaseBagOpenEvent;
+
+    public static void CallBaseBagOpenEvent(SlotType slotType, InventoryBag_SO bag_SO)
+    {
+        BaseBagOpenEvent?.Invoke(slotType, bag_SO);
+    }
+
+    //商店关闭
+    public static event Action<SlotType, InventoryBag_SO> BaseBagCloseEvent;
+
+    public static void CallBaseBagCloseEvent(SlotType slotType, InventoryBag_SO bag_SO)
+    {
+        BaseBagCloseEvent?.Invoke(slotType, bag_SO);
+    }
+
+    public static event Action<DialoguePiece> ShowDialogueEvent;
+
+    public static void CallShowDialogueEvent(DialoguePiece piece)
+    {
+        ShowDialogueEvent?.Invoke(piece);
+    }
+
+    public static event Action<GameState> UpdateGameStateEvent;
+    public static void CallUpdateGameStateEvent(GameState gameState)
+    {
+        UpdateGameStateEvent?.Invoke(gameState);
+    }
+
+    public static event Action<ItemDetails, bool> ShowTradeUI;
+    public static void CallShowTradeUI(ItemDetails item, bool isSell)
+    {
+        ShowTradeUI?.Invoke(item, isSell);
     }
 }

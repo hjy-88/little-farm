@@ -32,3 +32,8 @@ public enum GridType
 {
     diggable,Dropitem,NPCObstacle
 }
+
+public enum GameState
+{
+    GamePlay, Pause
+}

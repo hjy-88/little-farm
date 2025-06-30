@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
         EventHandler.AfterSceneLoadedEvent += OnAfterSceneLoadedEvent;
         EventHandler.MoveToPosition += OnMoveToPosition;
         EventHandler.MouseClickedEvent += OnMouseClickedEvent;
+        EventHandler.UpdateGameStateEvent += OnUpdateGameStateEvent;
     }
 
     private void OnDisable()
@@ -40,7 +41,38 @@ public class Player : MonoBehaviour
         EventHandler.AfterSceneLoadedEvent -= OnAfterSceneLoadedEvent;
         EventHandler.MoveToPosition -= OnMoveToPosition;
         EventHandler.MouseClickedEvent -= OnMouseClickedEvent;
+        EventHandler.UpdateGameStateEvent -= OnUpdateGameStateEvent;
     }
+
+    private void Update()
+    {
+        if (!inputDisable)
+        {
+            PlayerInput();
+        }
+        else
+            isMoving = false;
+        SwichAnimation();
+    }
+    private void FixedUpdate()
+    {
+        if (!inputDisable)
+            Movement();
+    }
+
+    private void OnUpdateGameStateEvent(GameState gameState)
+    {
+        switch (gameState)
+        {
+            case GameState.GamePlay:
+                inputDisable = false;
+                break;
+            case GameState.Pause:
+                inputDisable = true;
+                break;
+        }
+    }
+
     private void OnMouseClickedEvent(Vector3 mouseWorldPos, ItemDetails itemDetails)
     {
         if(itemDetails.itemType!=ItemType.Seed&& itemDetails.itemType != ItemType.Commodity)
@@ -90,21 +122,7 @@ public class Player : MonoBehaviour
     }
 
 
-    private void Update()
-    {
-        if (! inputDisable)
-        {
-            PlayerInput();
-        }
-        else 
-            isMoving = false;
-        SwichAnimation();
-    }
-    private void FixedUpdate()
-    {
-        if(!inputDisable)
-            Movement();
-    }
+
     private void PlayerInput()
     {
         inputX = Input.GetAxisRaw("Horizontal");
