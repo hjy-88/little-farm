@@ -39,16 +39,27 @@ public class CursorManager : MonoBehaviour
     
     private void Start()
     {
-        cursorCanvas = GameObject.FindGameObjectWithTag("CursorCanvas").GetComponent<RectTransform>();
-        cursorImage = cursorCanvas.GetChild(0).GetComponent<Image>();
+       
+       
         currentSprite = normal;
-        SetCursorImage(normal);
+       
 
         mainCamera = Camera.main;
     }
     private void Update()
     {
-        if (cursorCanvas == null) return;
+        if (cursorCanvas == null) {
+            var cs = GameObject.FindGameObjectWithTag("CursorCanvas");
+            if (cs)
+            {
+                cursorCanvas = cs.GetComponent<RectTransform>();
+                cursorImage = cursorCanvas.GetChild(0).GetComponent<Image>(); SetCursorImage(normal);
+            }
+               
+           
+            return;
+        }
+     
         cursorImage.transform.position = Input.mousePosition;
         if (!InteractWithUI()&&cursorEnable)
         {
