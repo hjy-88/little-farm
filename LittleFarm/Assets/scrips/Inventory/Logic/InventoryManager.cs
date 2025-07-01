@@ -8,8 +8,8 @@ namespace MFarm.Inventory
     {
         [Header("物品数据")]
         public ItemDataList_SO itemDataList_SO;
-        //[Header("建造蓝图")]
-        //public BluePrintDataList_SO bluePrintData;
+        [Header("建造蓝图")]
+        public BluePrintDataList_SO bluePrintData;
         [Header("背包数据")]
         //public InventoryBag_SO playerBagTemp;
         public InventoryBag_SO playerBag;
@@ -19,15 +19,27 @@ namespace MFarm.Inventory
         {
             EventHandler.DropItemEvent += OnDropItemEvent;
             EventHandler.HarvestAtPlayerPosition += OnHarvestAtPlayerPosition;
+            EventHandler.BuildFurnitureEvent += OnBuildFurnitureEvent;
         }
         private void OnDisable()
         {
             EventHandler.DropItemEvent -= OnDropItemEvent;
             EventHandler.HarvestAtPlayerPosition -= OnHarvestAtPlayerPosition;
+            EventHandler.BuildFurnitureEvent -= OnBuildFurnitureEvent;
         }
         private void Start()
         {
             EventHandler.CallUpdateInventoryUI(InventoryLocation.Player, playerBag.itemList);
+        }
+
+        private void OnBuildFurnitureEvent(int ID, Vector3 mousePos)
+        {
+            RemoveItem(ID, 1);
+            BluePrintDetails bluePrint = bluePrintData.GetBluePrintDetails(ID);
+            foreach (var item in bluePrint.resourceItem)
+            {
+                RemoveItem(item.itemID, item.itemAmount);
+            }
         }
 
         private void OnDropItemEvent(int ID, Vector3 pos,ItemType itemType)
@@ -182,6 +194,25 @@ namespace MFarm.Inventory
             //刷新UI
             EventHandler.CallUpdateInventoryUI(InventoryLocation.Player, playerBag.itemList);
         }
+
+        public bool CheckStock(int ID)
+        {
+            var bluePrintDetails = bluePrintData.GetBluePrintDetails(ID);
+
+            foreach (var resourceItem in bluePrintDetails.resourceItem)
+            {
+                var itemStock = playerBag.GetInventoryItem(resourceItem.itemID);
+                if (itemStock.itemAmount >= resourceItem.itemAmount)
+                {
+                    continue;
+                }
+                else return false;
+            }
+            return true;
+        }
+
+
+
         private void OnHarvestAtPlayerPosition(int ID)
         {
             var index = GetItemIndexInBag(ID);

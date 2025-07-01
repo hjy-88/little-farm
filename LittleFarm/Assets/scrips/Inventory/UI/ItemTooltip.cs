@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using MFarm.Inventory;
 
 public class ItemTooltip : MonoBehaviour
 {
@@ -12,7 +13,9 @@ public class ItemTooltip : MonoBehaviour
     [SerializeField] private TextMeshProUGUI descriptionText;
     [SerializeField] private Text valueText;
     [SerializeField] private GameObject bottomPart;
-
+    [Header("建造")]
+    [SerializeField] public GameObject resourcePanel;
+    [SerializeField] private Image[] resourceItem;
     public void SetupTooltip(ItemDetails itemDetails, SlotType slotType)
     {
         nameText.text = itemDetails.itemName;
@@ -53,5 +56,24 @@ public class ItemTooltip : MonoBehaviour
             ItemType.WaterTool => "工具",
             _ => "无"
         };
+    }
+
+    public void SetupResourcePanel(int ID)
+    {
+        var bluePrintDetails = InventoryManager.Instance.bluePrintData.GetBluePrintDetails(ID);
+        for (int i = 0; i < resourceItem.Length; i++)
+        {
+            if (i < bluePrintDetails.resourceItem.Length)
+            {
+                var item = bluePrintDetails.resourceItem[i];
+                resourceItem[i].gameObject.SetActive(true);
+                resourceItem[i].sprite = InventoryManager.Instance.GetItemDetails(item.itemID).itemIcon;
+                resourceItem[i].transform.GetChild(0).GetComponent<Text>().text = item.itemAmount.ToString();
+            }
+            else
+            {
+                resourceItem[i].gameObject.SetActive(false);
+            }
+        }
     }
 }

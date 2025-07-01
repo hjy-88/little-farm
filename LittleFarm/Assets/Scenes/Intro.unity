@@ -154,7 +154,7 @@ MonoBehaviour:
   scenesToLoad:
   - 1
   - UI
-  - 01.field
+  - 02.Home
   sceneToUnload: Intro
 --- !u!4 &4428609
 Transform:

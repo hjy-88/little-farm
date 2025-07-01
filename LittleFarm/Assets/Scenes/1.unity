@@ -962,7 +962,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1808381567
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1060,6 +1060,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemDataList_SO: {fileID: 11400000, guid: 679c01267c734f847b4759ccc0f14ad0, type: 2}
+  bluePrintData: {fileID: 11400000, guid: 4d316b7784666284284c6d45bf8dea42, type: 2}
   playerBag: {fileID: 11400000, guid: b145971cee4f62248aa8dade6dc2b188, type: 2}
   PlayerMoney: 300
 --- !u!4 &1829999658

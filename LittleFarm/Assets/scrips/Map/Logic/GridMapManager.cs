@@ -159,6 +159,9 @@ namespace MFarm.Map
                         /*if (currentCrop != null)
                             Debug.Log(currentCrop.cropDetails.seedItemID);*/
                         break;
+                    case ItemType.Furniture:
+                        EventHandler.CallBuildFurnitureEvent(itemDetails.itemID, mouseWorldPos);
+                        break;
                 }
                 UpdateTileDetails(currentTile);
             }

@@ -56,6 +56,7 @@ public class TileDetails
     public int seedItemId = -1;
     public int growthDays = -1;
     public int daysSinceLastHarvset = -1;
+    public bool canPlaceFurniture;
 }
 
 [System.Serializable]
@@ -83,6 +84,13 @@ public class SerializableVector3
 
 [System.Serializable]
 public class SceneItem
+{
+    public int itemID;
+    public SerializableVector3 position;
+}
+
+[System.Serializable]
+public class SceneFurniture
 {
     public int itemID;
     public SerializableVector3 position;

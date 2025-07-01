@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using MFarm.Map;
+using MFarm.Inventory;
 using MFarm.CropPlant;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -12,6 +13,8 @@ public class CursorManager : MonoBehaviour
     private Sprite currentSprite;
     private Image cursorImage;
     private RectTransform cursorCanvas;
+
+    private Image buildImage;
 
     private Camera mainCamera;
     private Grid currentGrid;
@@ -39,36 +42,34 @@ public class CursorManager : MonoBehaviour
     
     private void Start()
     {
-       
-       
+        cursorCanvas = GameObject.FindGameObjectWithTag("CursorCanvas").GetComponent<RectTransform>();
+        cursorImage = cursorCanvas.GetChild(0).GetComponent<Image>();
+        //拿到建造图标
+        buildImage = cursorCanvas.GetChild(1).GetComponent<Image>();
+        buildImage.gameObject.SetActive(false);
+
         currentSprite = normal;
-       
+        SetCursorImage(normal);
 
         mainCamera = Camera.main;
     }
     private void Update()
     {
-        if (cursorCanvas == null) {
-            var cs = GameObject.FindGameObjectWithTag("CursorCanvas");
-            if (cs)
-            {
-                cursorCanvas = cs.GetComponent<RectTransform>();
-                cursorImage = cursorCanvas.GetChild(0).GetComponent<Image>(); SetCursorImage(normal);
-            }
-               
-           
-            return;
-        }
-     
+        if (cursorCanvas == null) return;
+
         cursorImage.transform.position = Input.mousePosition;
-        if (!InteractWithUI()&&cursorEnable)
+
+        if (!InteractWithUI() && cursorEnable)
         {
             SetCursorImage(currentSprite);
             CheckCursorValid();
             CheckPlayerInput();
         }
         else
+        {
             SetCursorImage(normal);
+            buildImage.gameObject.SetActive(false);
+        }
     }
     private void CheckPlayerInput()
     {
@@ -96,17 +97,18 @@ public class CursorManager : MonoBehaviour
     {
         cursorImage.sprite = sprite;
         cursorImage.color = new Color(1, 1, 1, 1);
-
     }
     private void SetCursorValid()
     {
         cursorPositionValid = true;
         cursorImage.color = new Color(1, 1, 1, 1);
+        buildImage.color = new Color(1, 1, 1, 0.5f);
     }
     private void SetCursorInvalid()
     {
         cursorPositionValid = false;
         cursorImage.color = new Color(1, 0, 0, 0.5f);
+        buildImage.color = new Color(1, 0, 0, 0.5f);
     }
     private void OnItemSelectedEvent(ItemDetails itemDetails,bool isSelected)
     {
@@ -116,6 +118,7 @@ public class CursorManager : MonoBehaviour
             currentItem = null;
             cursorEnable = false;
             currentSprite = normal;
+            buildImage.gameObject.SetActive(false);
         }
         else
         {
@@ -130,9 +133,17 @@ public class CursorManager : MonoBehaviour
                 ItemType.CollectTool => tool,
                 ItemType.ReapTool => tool,
                 ItemType.Commodity=>item,
-                _=>normal
+                ItemType.Furniture => tool,
+                _ =>normal
             };
             cursorEnable = true;
+
+            if (itemDetails.itemType == ItemType.Furniture)
+            {
+                buildImage.gameObject.SetActive(true);
+                buildImage.sprite = itemDetails.itemOnWorldSprite;
+                buildImage.SetNativeSize();
+            }
         }
         
     }
@@ -143,7 +154,10 @@ public class CursorManager : MonoBehaviour
         //Debug.Log("WorldPos:" + mouseWorldPos + " GridPos:" + mouseGridPos);
 
         var playerGridPos = currentGrid.WorldToCell(PlayerTransform.position);
-        if(Mathf.Abs(mouseGridPos.x-playerGridPos.x)>currentItem.itemUseRadius||Mathf.Abs(mouseGridPos.y-playerGridPos.y)>currentItem.itemUseRadius)
+
+        buildImage.rectTransform.position = Input.mousePosition;
+
+        if (Mathf.Abs(mouseGridPos.x-playerGridPos.x)>currentItem.itemUseRadius||Mathf.Abs(mouseGridPos.y-playerGridPos.y)>currentItem.itemUseRadius)
         {
             SetCursorInvalid();
             return;
@@ -173,6 +187,15 @@ public class CursorManager : MonoBehaviour
                         if(currentCrop.CheckToolAvailable(currentItem.itemID))
                             if(currentTile.growthDays>=currentCrop.TotalGrowthDays) SetCursorValid(); else SetCursorInvalid();
                     }
+                    else
+                        SetCursorInvalid();
+                    break;
+                case ItemType.Furniture:
+                    //buildImage.gameObject.SetActive(true);
+                    //var bluePrintDetails = InventoryManager.Instance.bluePrintData.GetBluePrintDetails(currentItem.itemID);
+                    //待修改
+                    if (currentTile.canDig && InventoryManager.Instance.CheckStock(currentItem.itemID))
+                        SetCursorValid();
                     else
                         SetCursorInvalid();
                     break;
