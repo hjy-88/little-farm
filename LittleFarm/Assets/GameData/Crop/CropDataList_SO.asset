@@ -114,10 +114,10 @@ MonoBehaviour:
     growthSprites:
     - {fileID: -1995061010, guid: 47d222cf2f6b3bb46afd970fe7638645, type: 3}
     seasons: 00000000010000000200000003000000
-    harvestToolItemID: f0030000
+    harvestToolItemID: ee030000
     requireActionCount: 03000000
     transferItemID: 0
-    producedItemID: f7030000
+    producedItemID: f8030000
     producedMinAmount: 01000000
     producedMaxAmount: 03000000
     spawnRadius: {x: 1, y: 1}
