@@ -9,6 +9,7 @@ TagManager:
   - Water
   - Dig
   - CropParent
+  - Furniture
   layers:
   - Default
   - TransparentFX
@@ -78,4 +79,7 @@ TagManager:
     locked: 0
   - name: instance
     uniqueID: 1179887317
+    locked: 0
+  - name: Furniture
+    uniqueID: 1805329853
     locked: 0

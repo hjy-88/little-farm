@@ -164,6 +164,19 @@ public class CursorManager : MonoBehaviour
         }
         
     }
+    //新增方法
+    private bool HaveFurnitureInRadius(BluePrintDetails bluePrintDetails)
+    {
+        var buildItem = bluePrintDetails.buildPrefab;
+        Vector2 point = mouseWorldPos;
+        var size = buildItem.GetComponent<BoxCollider2D>().size;
+
+        var otherColl = Physics2D.OverlapBox(point, size, 0);
+        if (otherColl != null)
+            return otherColl.GetComponent<Furniture>();
+        return false;
+    }
+
     private void CheckCursorValid()
     {
         Vector3 mouseScreenPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Mathf.Abs(mainCamera.transform.position.z));
@@ -217,10 +230,11 @@ public class CursorManager : MonoBehaviour
                         SetCursorInvalid();
                     break;
                 case ItemType.Furniture:
-                    //buildImage.gameObject.SetActive(true);
-                    //var bluePrintDetails = InventoryManager.Instance.bluePrintData.GetBluePrintDetails(currentItem.itemID);
+                    //新增修改
+                    buildImage.gameObject.SetActive(true);
+                    var bluePrintDetails = InventoryManager.Instance.bluePrintData.GetBluePrintDetails(currentItem.itemID);
                     //待修改
-                    if (currentTile.canDig && InventoryManager.Instance.CheckStock(currentItem.itemID))
+                    if (currentTile./*canDig*/canPlaceFurniture && InventoryManager.Instance.CheckStock(currentItem.itemID)/*&&!HaveFurnitureInRadius(bluePrintDetails)*/)
                         SetCursorValid();
                     else
                         SetCursorInvalid();

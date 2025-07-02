@@ -50,13 +50,14 @@ public class TileDetails
     public int gridX, gridY;
     public bool canDig;
     public bool canDropItem;
+    public bool canPlaceFurniture;
     public bool isNPCObstacle;
     public int daySinceDug = -1;
     public int daysSinceWatered = -1;
     public int seedItemId = -1;
     public int growthDays = -1;
     public int daysSinceLastHarvset = -1;
-    public bool canPlaceFurniture;
+
 }
 
 [System.Serializable]

@@ -16,6 +16,20 @@ MonoBehaviour:
   - ID: 1011
     resourceItem:
     - itemID: 1010
-      itemAmount: 10
+      itemAmount: 15
     buildPrefab: {fileID: 8072336239209864311, guid: 874fdffe7991c694baa8cb9071ca4a1f, type: 3}
     buildItemID: 1014
+  - ID: 1027
+    resourceItem:
+    - itemID: 1026
+      itemAmount: 12
+    buildPrefab: {fileID: 8072336239209864311, guid: 3e7bca68fb84ad741bd68e693fb06436, type: 3}
+    buildItemID: 1029
+  - ID: 1028
+    resourceItem:
+    - itemID: 1010
+      itemAmount: 10
+    - itemID: 1026
+      itemAmount: 5
+    buildPrefab: {fileID: 8072336239209864311, guid: e654cd45b126ac0479004f81adadfd79, type: 3}
+    buildItemID: 1030

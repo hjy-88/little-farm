@@ -65,6 +65,9 @@ namespace MFarm.Map
                     case GridType.Dropitem:
                         tileDetails.canDropItem = tileProperty.boolTypeValue;
                         break;
+                    case GridType.PlaceFurniture:
+                        tileDetails.canPlaceFurniture = tileProperty.boolTypeValue;
+                        break;
                     case GridType.NPCObstacle:
                         tileDetails.isNPCObstacle = tileProperty.boolTypeValue;
                         break;

@@ -14,23 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemList:
   - itemID: 1011
-    itemAmount: 17
-  - itemID: 1010
-    itemAmount: 569
-  - itemID: 1001
-    itemAmount: 3
-  - itemID: 1005
-    itemAmount: 1
-  - itemID: 1006
-    itemAmount: 2
-  - itemID: 1013
-    itemAmount: 49
-  - itemID: 1009
-    itemAmount: 1
-  - itemID: 1004
-    itemAmount: 1
+    itemAmount: 20
+  - itemID: 1027
+    itemAmount: 20
+  - itemID: 1018
+    itemAmount: 27
   - itemID: 1003
-    itemAmount: 3
+    itemAmount: 100
+  - itemID: 1028
+    itemAmount: 20
+  - itemID: 1010
+    itemAmount: 800
+  - itemID: 1026
+    itemAmount: 800
+  - itemID: 0
+    itemAmount: 0
+  - itemID: 0
+    itemAmount: 0
   - itemID: 0
     itemAmount: 0
   - itemID: 0

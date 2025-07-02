@@ -362,15 +362,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic_Furniture_12
+      name: closet
       rect:
         serializedVersion: 2
         x: 49
         y: 48
         width: 14
         height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -509,15 +509,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic_Furniture_20
+      name: table
       rect:
         serializedVersion: 2
         x: 49
         y: 33
         width: 14
         height: 14
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -733,7 +733,6 @@ TextureImporter:
       Basic_Furniture_1: 755628537
       Basic_Furniture_10: -424561092
       Basic_Furniture_11: 1594009594
-      Basic_Furniture_12: 23931423
       Basic_Furniture_14: 56314938
       Basic_Furniture_15: 8148954
       Basic_Furniture_16: 1674099806
@@ -741,7 +740,6 @@ TextureImporter:
       Basic_Furniture_18: 388052357
       Basic_Furniture_19: -1055036592
       Basic_Furniture_2: -998437404
-      Basic_Furniture_20: 461784536
       Basic_Furniture_21: 2046795335
       Basic_Furniture_22: 1823243195
       Basic_Furniture_23: 470292259
@@ -758,6 +756,8 @@ TextureImporter:
       Basic_Furniture_8: -1879393537
       Basic_Furniture_9: -434976655
       chair: -1931543673
+      closet: 23931423
+      table: 461784536
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

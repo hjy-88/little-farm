@@ -30,7 +30,7 @@ public enum Season
 
 public enum GridType
 {
-    diggable,Dropitem,NPCObstacle
+    diggable,Dropitem,NPCObstacle,PlaceFurniture
 }
 
 public enum GameState
