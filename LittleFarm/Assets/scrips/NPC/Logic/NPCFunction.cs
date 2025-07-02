@@ -28,4 +28,5 @@ public class NPCFunction : MonoBehaviour
         EventHandler.CallBaseBagCloseEvent(SlotType.Shop, shopData);
         EventHandler.CallUpdateGameStateEvent(GameState.GamePlay);
     }
+
 }

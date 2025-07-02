@@ -95,6 +95,8 @@ GameObject:
   - component: {fileID: 3008577687323684455}
   - component: {fileID: 6457657686432618004}
   - component: {fileID: 1001220073385582743}
+  - component: {fileID: 3240877111069892730}
+  - component: {fileID: 7750468041123525169}
   m_Layer: 0
   m_Name: Tree_Apple
   m_TagString: Untagged
@@ -176,6 +178,62 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5, y: 1.875}
   m_EdgeRadius: 0
+--- !u!114 &3240877111069892730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4656358841978944616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c85aabb152e5b4c45870426f1cd15983, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cropDetails:
+    seedItemID: 0
+    growthDays: 
+    growthPrefabs: []
+    growthSprites: []
+    seasons: 
+    harvestToolItemID: 
+    requireActionCount: 
+    transferItemID: 0
+    producedItemID: 
+    producedMinAmount: 
+    producedMaxAmount: 
+    spawnRadius: {x: 0, y: 0}
+    daysToRegrow: 0
+    regrowTimes: 0
+    generateAtPlayerPosition: 0
+    hasAnimation: 0
+    hasParticalEffect: 0
+  tileDetails:
+    gridX: 0
+    gridY: 0
+    canDig: 0
+    canDropItem: 0
+    isNPCObstacle: 0
+    daySinceDug: -1
+    daysSinceWatered: -1
+    seedItemId: -1
+    growthDays: -1
+    daysSinceLastHarvset: -1
+    canPlaceFurniture: 0
+--- !u!114 &7750468041123525169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4656358841978944616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7ea561894af7e64f80bb9b18d7c540e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seedItemID: 0
+  growthDays: 0
 --- !u!1 &7363673123862685298
 GameObject:
   m_ObjectHideFlags: 0

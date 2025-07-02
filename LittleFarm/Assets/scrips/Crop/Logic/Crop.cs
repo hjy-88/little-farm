@@ -140,6 +140,7 @@ public class Crop : MonoBehaviour
             }
 
             Destroy(gameObject);
+
         }
 
     }
