@@ -152,9 +152,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scenesToLoad:
-  - 1
   - UI
-  - 02.Home
+  - 1
   sceneToUnload: Intro
 --- !u!4 &4428609
 Transform:

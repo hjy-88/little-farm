@@ -53,13 +53,19 @@ namespace Mfarm.Inventory
                 playerSlots[i].slotIndex = i;
             }
             bagOpened = bagUI.activeInHierarchy;
-            playerMoneyText.text = InventoryManager.Instance.PlayerMoney.ToString();
+           
         }
 
 
         ///键盘按下b键打开背包
         private void Update()
         {
+            if (InventoryManager.Instance!=null)
+            {
+                playerMoneyText.text = InventoryManager.Instance.PlayerMoney.ToString();
+               
+            }
+           
             if (Input.GetKeyDown(KeyCode.B))
             {
                 OpenBagUI();

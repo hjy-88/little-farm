@@ -10,7 +10,7 @@ namespace MFarm.Transition
     {
         [SceneName]
         public string startSceneName = string.Empty;
-
+        [SerializeField]
         private CanvasGroup fadeCanvasGroup;
         private bool isFade;
 
