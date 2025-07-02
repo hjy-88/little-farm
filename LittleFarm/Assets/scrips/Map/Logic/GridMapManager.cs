@@ -18,6 +18,7 @@ namespace MFarm.Map
         private Dictionary<string, TileDetails> tileDetailsDict = new Dictionary<string, TileDetails>();
         private Grid currentGrid;
         private Season currentSeason;
+        private Dictionary<string, bool> firstLoadDict = new Dictionary<string, bool>();
         private void OnEnable()
         {
             EventHandler.ExecuteActionAfterAnimation += OnExecuteActionAfterAnimation;
@@ -36,6 +37,7 @@ namespace MFarm.Map
         {
             foreach(var mapData in mapDataList)
             {
+                firstLoadDict.Add(mapData.sceneName, true);
                 InitTileDetailsDict(mapData);
             }
         }
@@ -92,6 +94,11 @@ namespace MFarm.Map
             digTilemap = GameObject.FindWithTag("Dig").GetComponent<Tilemap>();
             waterTilemap = GameObject.FindWithTag("Water").GetComponent<Tilemap>();
 
+            if(firstLoadDict[SceneManager.GetActiveScene().name])
+            {
+                EventHandler.CallGenerateCropEvent();
+                firstLoadDict[SceneManager.GetActiveScene().name] = false;
+            }
             //DisplayMap(SceneManager.GetActiveScene().name);
             RefreshMap();
         }
@@ -211,10 +218,10 @@ namespace MFarm.Map
             {
                 tileDetailsDict[key] = tileDetails;
             }
-            /*else
+            else
             {
                 tileDetailsDict.Add(key, tileDetails);
-            }*/
+            }
         }
         private void RefreshMap()
         {

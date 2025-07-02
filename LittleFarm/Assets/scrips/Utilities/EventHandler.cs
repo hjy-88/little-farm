@@ -136,4 +136,10 @@ public static class EventHandler
     {
         BuildFurnitureEvent?.Invoke(ID, pos);
     }
+
+    public static event Action GenerateCropEvent;
+    public static void CallGenerateCropEvent()
+    {
+        GenerateCropEvent?.Invoke();
+    }
 }

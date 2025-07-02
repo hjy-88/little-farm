@@ -783,6 +783,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startSceneName: 02.Home
+  fadeCanvasGroup: {fileID: 0}
 --- !u!4 &1712309279
 Transform:
   m_ObjectHideFlags: 0
@@ -1111,6 +1112,7 @@ MonoBehaviour:
   waterTile: {fileID: 11400000, guid: 56efe497ddf63f4469fbcffd452d5a40, type: 2}
   mapDataList:
   - {fileID: 11400000, guid: c87321afe9bbb6947963180efd186829, type: 2}
+  - {fileID: 11400000, guid: c1882587b3a5a144eae86980d5806ea6, type: 2}
 --- !u!4 &1944185868
 Transform:
   m_ObjectHideFlags: 0
