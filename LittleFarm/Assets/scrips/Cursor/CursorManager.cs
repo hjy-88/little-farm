@@ -165,7 +165,8 @@ public class CursorManager : MonoBehaviour
     }
     private void CheckCursorValid()
     {
-        mouseWorldPos = mainCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,Input.mousePosition.y,-mainCamera.transform.position.z));
+        Vector3 mouseScreenPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Mathf.Abs(mainCamera.transform.position.z));
+        mouseWorldPos = mainCamera.ScreenToWorldPoint(mouseScreenPos);
         mouseGridPos = currentGrid.WorldToCell(mouseWorldPos);
         //Debug.Log("WorldPos:" + mouseWorldPos + " GridPos:" + mouseGridPos);
 

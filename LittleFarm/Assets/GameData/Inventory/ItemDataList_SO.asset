@@ -127,7 +127,7 @@ MonoBehaviour:
     itemIcon: {fileID: -409955713, guid: 364d4969ae9ee0f4695f66ba5d1555fd, type: 3}
     itemOnWorldSprite: {fileID: -409955713, guid: 364d4969ae9ee0f4695f66ba5d1555fd, type: 3}
     itemDescription: "\u6728\u5934\u6BB5\u3001\u53EF\u4EE5\u7528\u6765\u5EFA\u9020\u5404\u79CD\u5BB6\u5177~"
-    itemUseRadius: 1
+    itemUseRadius: 2
     canPickedup: 1
     canDropped: 1
     canCarried: 1
