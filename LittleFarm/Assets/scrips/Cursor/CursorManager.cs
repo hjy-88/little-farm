@@ -42,20 +42,36 @@ public class CursorManager : MonoBehaviour
     
     private void Start()
     {
-        cursorCanvas = GameObject.FindGameObjectWithTag("CursorCanvas").GetComponent<RectTransform>();
+        /*cursorCanvas = GameObject.FindGameObjectWithTag("CursorCanvas").GetComponent<RectTransform>();
         cursorImage = cursorCanvas.GetChild(0).GetComponent<Image>();
         //拿到建造图标
         buildImage = cursorCanvas.GetChild(1).GetComponent<Image>();
-        buildImage.gameObject.SetActive(false);
+        buildImage.gameObject.SetActive(false);*/
 
         currentSprite = normal;
-        SetCursorImage(normal);
+        //SetCursorImage(normal);
 
-        mainCamera = Camera.main;
+        //mainCamera = Camera.main;
     }
     private void Update()
     {
-        if (cursorCanvas == null) return;
+        //if (cursorCanvas == null) return;
+        mainCamera = Camera.main;
+        if (cursorCanvas == null)
+        {
+            var cs = GameObject.FindGameObjectWithTag("CursorCanvas");
+            if (cs != null)
+            {
+                cursorCanvas = cs.GetComponent<RectTransform>();
+                cursorImage = cursorCanvas.GetChild(0).GetComponent<Image>();
+                buildImage = cursorCanvas.GetChild(1).GetComponent<Image>();
+                buildImage.gameObject.SetActive(false);
+
+                SetCursorImage(normal);
+            }
+
+            return;
+        }
 
         cursorImage.transform.position = Input.mousePosition;
 
