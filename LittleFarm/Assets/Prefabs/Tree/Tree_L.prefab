@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7569031426730420732}
   - component: {fileID: 6350282047583740215}
-  - component: {fileID: 4052251461710521550}
+  - component: {fileID: 6091731496729622360}
   m_Layer: 0
   m_Name: Tree_Top_L
   m_TagString: Untagged
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1179887317
-  m_SortingLayer: 7
+  m_SortingLayer: 11
   m_SortingOrder: 1
   m_Sprite: {fileID: 414548871, guid: 04cc6d98a13bfc54eb6d0783e555a53d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -85,18 +85,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
---- !u!114 &4052251461710521550
-MonoBehaviour:
+--- !u!95 &6091731496729622360
+Animator:
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2666733299589226539}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f581209bab0d1f844ae91bf8a6e4e8bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e851933ca3bd4794e91098cc681f5264, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5688718059781353311
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,7 +117,6 @@ GameObject:
   - component: {fileID: 3968703084547739157}
   - component: {fileID: 8705428729975474719}
   - component: {fileID: 5855110274165193822}
-  - component: {fileID: 5420457146894603652}
   m_Layer: 0
   m_Name: Tree_Bottom_L
   m_TagString: Untagged
@@ -170,7 +178,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1179887317
-  m_SortingLayer: 7
+  m_SortingLayer: 11
   m_SortingOrder: 0
   m_Sprite: {fileID: -1673227431, guid: 2b1923b6812b37249b5300e384be8b5e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -218,7 +226,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0.375}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1.125, y: 0.75}
     newSize: {x: 1.125, y: 0.75}
     adaptiveTilingThreshold: 0.5
@@ -228,18 +236,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.125, y: 0.75}
   m_EdgeRadius: 0
---- !u!114 &5420457146894603652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5688718059781353311}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f581209bab0d1f844ae91bf8a6e4e8bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5821842178087299546
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,6 +247,7 @@ GameObject:
   - component: {fileID: 2158782723753449483}
   - component: {fileID: 2226708660648782021}
   - component: {fileID: 130060882776494813}
+  - component: {fileID: 995362744374289850}
   m_Layer: 0
   m_Name: Tree_L
   m_TagString: Untagged
@@ -284,7 +281,7 @@ SortingGroup:
   m_GameObject: {fileID: 5821842178087299546}
   m_Enabled: 1
   m_SortingLayerID: 1179887317
-  m_SortingLayer: 7
+  m_SortingLayer: 11
   m_SortingOrder: 0
   m_SortAtRoot: 0
 --- !u!61 &130060882776494813
@@ -319,7 +316,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 1.40625}
+  m_Offset: {x: -0.024395347, y: 0.33634233}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -330,5 +327,47 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.75, y: 2.8125}
+  m_Size: {x: 1.4605353, y: 0.93754864}
   m_EdgeRadius: 0
+--- !u!114 &995362744374289850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5821842178087299546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c85aabb152e5b4c45870426f1cd15983, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cropDetails:
+    seedItemID: 0
+    growthDays: 
+    growthPrefabs: []
+    growthSprites: []
+    seasons: 
+    harvestToolItemID: 
+    requireActionCount: 
+    transferItemID: 0
+    producedItemID: 
+    producedMinAmount: 
+    producedMaxAmount: 
+    spawnRadius: {x: 0, y: 0}
+    daysToRegrow: 0
+    regrowTimes: 0
+    generateAtPlayerPosition: 0
+    hasAnimation: 0
+    hasParticalEffect: 0
+  tileDetails:
+    gridX: 0
+    gridY: 0
+    canDig: 0
+    canDropItem: 0
+    isNPCObstacle: 0
+    daySinceDug: -1
+    daysSinceWatered: -1
+    seedItemId: -1
+    growthDays: -1
+    daysSinceLastHarvset: -1
+    canPlaceFurniture: 0

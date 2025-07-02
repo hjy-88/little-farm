@@ -130,6 +130,7 @@ namespace MFarm.Map
             //Debug.Log($"{currentTile}");
             if (currentTile!=null)
             {
+                Crop currentCrop = GetCropObject(mouseWorldPos);
                 //Debug.Log($"11");
                 switch (itemDetails.itemType)
                 {
@@ -152,8 +153,10 @@ namespace MFarm.Map
                         currentTile.daysSinceWatered = 0;
                         // “Ù–ß
                         break;
+                    case ItemType.ChopTool:
+                        currentCrop?.ProcessToolAction(itemDetails, currentCrop.tileDetails);
+                        break;
                     case ItemType.CollectTool:
-                        Crop currentCrop = GetCropObject(mouseWorldPos);
                         currentCrop.ProcessToolAction(itemDetails, currentTile);
                         //EventHandler.CallPlaySoundEvent(SoundName.Basket); 
                         /*if (currentCrop != null)

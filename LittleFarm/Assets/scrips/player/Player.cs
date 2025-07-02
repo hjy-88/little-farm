@@ -78,7 +78,7 @@ public class Player : MonoBehaviour
         if(itemDetails.itemType!=ItemType.Seed&& itemDetails.itemType != ItemType.Commodity)
         {
             mouseX = mouseWorldPos.x - transform.position.x;
-            mouseY = mouseWorldPos.y - transform.position.y;
+            mouseY = mouseWorldPos.y - (transform.position.y+0.5f);
 
             if (Mathf.Abs(mouseX) > Mathf.Abs(mouseY))
                 mouseY = 0;

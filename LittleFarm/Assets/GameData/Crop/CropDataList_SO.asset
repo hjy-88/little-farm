@@ -32,7 +32,7 @@ MonoBehaviour:
     producedItemID: eb030000
     producedMinAmount: 01000000
     producedMaxAmount: 03000000
-    spawnRadius: {x: 0, y: 0}
+    spawnRadius: {x: 4, y: 2}
     daysToRegrow: 0
     regrowTimes: 0
     generateAtPlayerPosition: 1
@@ -57,9 +57,53 @@ MonoBehaviour:
     producedItemID: f0030000
     producedMinAmount: 02000000
     producedMaxAmount: 06000000
-    spawnRadius: {x: 0, y: 0}
+    spawnRadius: {x: 2, y: 1}
     daysToRegrow: 0
     regrowTimes: 0
     generateAtPlayerPosition: 1
+    hasAnimation: 0
+    hasParticalEffect: 0
+  - seedItemID: 1013
+    growthDays: 02000000050000000500000005000000
+    growthPrefabs:
+    - {fileID: 4040390630980143379, guid: ec422a5d771daa54b8ac1a7d8834181a, type: 3}
+    - {fileID: 4040390630980143379, guid: ec422a5d771daa54b8ac1a7d8834181a, type: 3}
+    - {fileID: 4040390630980143379, guid: ec422a5d771daa54b8ac1a7d8834181a, type: 3}
+    - {fileID: 5821842178087299546, guid: af5e33be81f70144b919324cf5d50497, type: 3}
+    growthSprites:
+    - {fileID: 593350668, guid: 47d222cf2f6b3bb46afd970fe7638645, type: 3}
+    - {fileID: 350409852, guid: 2b1923b6812b37249b5300e384be8b5e, type: 3}
+    - {fileID: -1020585872, guid: 2b1923b6812b37249b5300e384be8b5e, type: 3}
+    - {fileID: 414548871, guid: 04cc6d98a13bfc54eb6d0783e555a53d, type: 3}
+    seasons: 00000000010000000200000003000000
+    harvestToolItemID: ee030000
+    requireActionCount: 05000000
+    transferItemID: 1012
+    producedItemID: f2030000
+    producedMinAmount: 03000000
+    producedMaxAmount: 08000000
+    spawnRadius: {x: 0, y: 0}
+    daysToRegrow: 0
+    regrowTimes: 0
+    generateAtPlayerPosition: 0
+    hasAnimation: 1
+    hasParticalEffect: 0
+  - seedItemID: 1012
+    growthDays: 00000000
+    growthPrefabs:
+    - {fileID: 3154032654919686213, guid: 88dc1987ee9a3b944a3c8ba350655e91, type: 3}
+    growthSprites:
+    - {fileID: -1673227431, guid: 2b1923b6812b37249b5300e384be8b5e, type: 3}
+    seasons: 00000000010000000200000003000000
+    harvestToolItemID: ee030000
+    requireActionCount: 05000000
+    transferItemID: 0
+    producedItemID: f2030000
+    producedMinAmount: 01000000
+    producedMaxAmount: 03000000
+    spawnRadius: {x: 0, y: 0}
+    daysToRegrow: 0
+    regrowTimes: 0
+    generateAtPlayerPosition: 0
     hasAnimation: 0
     hasParticalEffect: 0

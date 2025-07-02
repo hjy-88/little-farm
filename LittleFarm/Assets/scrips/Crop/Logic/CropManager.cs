@@ -87,7 +87,7 @@ namespace MFarm.CropPlant
             cropInstance.GetComponentInChildren<SpriteRenderer>().sprite = cropSprite;
             //Debug.Log(tileDetails.seedItemId);
             cropInstance.GetComponent<Crop>().cropDetails = cropDetails;
-            //cropInstance.GetComponent<Crop>().tileDetails = tileDetails;
+            cropInstance.GetComponent<Crop>().tileDetails = tileDetails;
         }
 
 

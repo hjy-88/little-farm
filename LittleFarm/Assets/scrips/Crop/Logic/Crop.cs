@@ -7,26 +7,23 @@ public class Crop : MonoBehaviour
     public CropDetails cropDetails;
     public TileDetails tileDetails;
     private int harvestActionCount;
-    /*public bool CanHarvest => tileDetails.growthDays >= cropDetails.TotalGrowthDays;
+    public bool CanHarvest => tileDetails.growthDays >= cropDetails.TotalGrowthDays;
 
     private Animator anim;
 
     private Transform PlayerTransform => FindObjectOfType<Player>().transform;
-    */
     public void ProcessToolAction(ItemDetails tool, TileDetails tile)
     {
         tileDetails = tile;
         int requireActionCount = cropDetails.GetTotalRequireCount(tool.itemID);
         if (requireActionCount == -1) return;
 
-        //anim = GetComponentInChildren<Animator>();
+        anim = GetComponentInChildren<Animator>();
 
-        //点击计数器
         if (harvestActionCount < requireActionCount)
         {
             harvestActionCount++;
-            /*
-            //判断是否有动画 树木
+
             if (anim != null && cropDetails.hasAnimation)
             {
                 if (PlayerTransform.position.x < transform.position.x)
@@ -34,7 +31,7 @@ public class Crop : MonoBehaviour
                 else
                     anim.SetTrigger("RotateLeft");
             }
-            //播放粒子
+            /*//播放粒子
             if (cropDetails.hasParticalEffect)
                 EventHandler.CallParticleEffectEvent(cropDetails.particleEffectType, transform.position + cropDetails.particleEffectTypePos);
             //播放声音
@@ -50,27 +47,36 @@ public class Crop : MonoBehaviour
             {
                 SpawnHarvestItems();
             }
-            /*else if (cropDetails.hasAnimation)
+            else if (cropDetails.hasAnimation)
             {
                 if (PlayerTransform.position.x < transform.position.x)
                     anim.SetTrigger("FallingRight");
                 else
                     anim.SetTrigger("FallingLeft");
-                EventHandler.CallPlaySoundEvent(SoundName.TreeFalling);
+                //EventHandler.CallPlaySoundEvent(SoundName.TreeFalling);
+                //Debug.LogError("111");
                 StartCoroutine(HarvestAfterAnimation());
-            }*/
+            }
         }
     }
-    /*
+    
     private IEnumerator HarvestAfterAnimation()
     {
-        while (!anim.GetCurrentAnimatorStateInfo(0).IsName("END"))
+        //Debug.LogError("111");
+        /*while (!anim.GetCurrentAnimatorStateInfo(0).IsName("END"))
         {
             yield return null;
-        }
+        }*/
+        // 先等待一帧确保动画触发
+        yield return null;
 
+        // 等待动画播放完成
+        yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length);
+
+        // 确保对象还没被销毁
+        if (this == null || gameObject == null) yield break;
+        //Debug.LogError("100");
         SpawnHarvestItems();
-        //转换新物体
         if (cropDetails.transferItemID > 0)
         {
             CreateTransferCrop();
@@ -79,15 +85,16 @@ public class Crop : MonoBehaviour
 
     private void CreateTransferCrop()
     {
-        tileDetails.seedItemID = cropDetails.transferItemID;
-        tileDetails.daysSinceLastHarvest = -1;
+        tileDetails.seedItemId = cropDetails.transferItemID;
+        tileDetails.daysSinceLastHarvset = -1;
         tileDetails.growthDays = 0;
 
         EventHandler.CallRefreshCurrentMap();
     }
-    */
+
     public void SpawnHarvestItems()
     {
+        
         for (int i = 0; i < cropDetails.producedItemID.Length; i++)
         {
             int amountToProduce;
@@ -106,14 +113,12 @@ public class Crop : MonoBehaviour
                 if (cropDetails.generateAtPlayerPosition)
                     EventHandler.CallHarvestAtPlayerPosition(cropDetails.producedItemID[i]);
                 else
-                {/*
-                    //判断应该生成的物品方向
+                {
                     var dirX = transform.position.x > PlayerTransform.position.x ? 1 : -1;
-                    //一定范围内的随机
                     var spawnPos = new Vector3(transform.position.x + Random.Range(dirX, cropDetails.spawnRadius.x * dirX),
                     transform.position.y + Random.Range(-cropDetails.spawnRadius.y, cropDetails.spawnRadius.y), 0);
 
-                    EventHandler.CallInstantiateItemInScene(cropDetails.producedItemID[i], spawnPos);*/
+                    EventHandler.CallInstantiateItemInScene(cropDetails.producedItemID[i], spawnPos);
                 }
             }
         }
@@ -131,6 +136,7 @@ public class Crop : MonoBehaviour
             {
                 tileDetails.daysSinceLastHarvset = -1;
                 tileDetails.seedItemId = -1;
+                
             }
 
             Destroy(gameObject);
