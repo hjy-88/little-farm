@@ -14,7 +14,7 @@ public class ItemTooltip : MonoBehaviour
     [SerializeField] private Text valueText;
     [SerializeField] private GameObject bottomPart;
     [Header("НЈдь")]
-    [SerializeField] public GameObject resourcePanel;
+    public GameObject resourcePanel;
     [SerializeField] private Image[] resourceItem;
     public void SetupTooltip(ItemDetails itemDetails, SlotType slotType)
     {

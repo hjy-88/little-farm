@@ -11,6 +11,7 @@ public class BluePrintDataList_SO : ScriptableObject
     {
         return bluePrintDataList.Find(b => b.ID == itemID);
     }
+
 }
 
 
@@ -20,4 +21,10 @@ public class BluePrintDetails
     public int ID;
     public InventoryItem[] resourceItem = new InventoryItem[4];
     public GameObject buildPrefab;
+
+
+    //ÐÂÔöÂß¼­
+    public int buildItemID;
 }
+
+

@@ -35,19 +35,6 @@ namespace MFarm.Inventory
         private void OnBuildFurnitureEvent(int ID, Vector3 mousePos)
         {
             BluePrintDetails bluePrint = InventoryManager.Instance.bluePrintData.GetBluePrintDetails(ID);
-            if (bluePrint == null)
-            {
-                Debug.LogError("bluePrint 为 null，无法生成家具！");
-            }
-            else if (bluePrint.buildPrefab == null)
-            {
-                Debug.LogError($"buildPrefab 为 null，bluePrint 名称为 {bluePrint.ID}");
-            }
-            else if (itemParent == null)
-            {
-                Debug.LogError("itemParent 为 null，请确认是否场景中存在目标父物体，并已正确赋值！");
-            }
-
             var buildItem = Instantiate(bluePrint.buildPrefab, mousePos, Quaternion.identity, itemParent);
         }
 

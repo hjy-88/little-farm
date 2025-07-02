@@ -1143,6 +1143,7 @@ GameObject:
   - component: {fileID: 1962800481}
   - component: {fileID: 1962800486}
   - component: {fileID: 1962800487}
+  - component: {fileID: 1962800488}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -1309,6 +1310,23 @@ MonoBehaviour:
   - partType: 6
     partName: 0
     overrideController: {fileID: 22100000, guid: 0e5c21e4bb695e94391dcab649ccbc73, type: 2}
+--- !u!114 &1962800488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962800480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 124f7f1f63d2244428484fee0af2a957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bluePrintID: 0
+  itemID: 0
+  FuniturID: 0
+  RealItem: {fileID: 0}
+  id: 0
 --- !u!1 &2093190979
 GameObject:
   m_ObjectHideFlags: 3

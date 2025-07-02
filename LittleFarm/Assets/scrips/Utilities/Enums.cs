@@ -1,7 +1,7 @@
 public enum ItemType
 {
     Seed, Commodity, Furniture,///种子，商品，家具///
-    HoeTool, ChopTool, BreakTool, ReapTool, WaterTool, CollectTool,///锄头，砍树，砸石头，割草，浇水，收割
+    HoeTool, ChopTool, BreakTool, ReapTool, WaterTool, CollectTool,Buildtool,///锄头，砍树，砸石头，割草，浇水，收割
     ReapableScenery///杂草
 }
 public enum SlotType
@@ -16,7 +16,7 @@ public enum InventoryLocation
 
 public enum PartType
 {
-    None, Carry, Hoe, Break,Chop,Water,Collect
+    None, Carry, Hoe, Break,Chop,Water,Collect,Build
 }
 public enum PartName
 {

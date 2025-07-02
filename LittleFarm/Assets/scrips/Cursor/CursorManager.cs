@@ -150,6 +150,7 @@ public class CursorManager : MonoBehaviour
                 ItemType.ReapTool => tool,
                 ItemType.Commodity=>item,
                 ItemType.Furniture => tool,
+                ItemType.Buildtool => tool,
                 _ =>normal
             };
             cursorEnable = true;

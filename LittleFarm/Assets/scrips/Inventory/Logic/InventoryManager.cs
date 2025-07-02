@@ -42,7 +42,7 @@ namespace MFarm.Inventory
             }
         }
 
-        private void OnDropItemEvent(int ID, Vector3 pos,ItemType itemType)
+        private void OnDropItemEvent(int ID, Vector3 pos, ItemType itemType)
         {
             RemoveItem(ID, 1);
         }
@@ -149,16 +149,16 @@ namespace MFarm.Inventory
             EventHandler.CallUpdateInventoryUI(InventoryLocation.Player, playerBag.itemList);
         }
 
-        private void RemoveItem(int ID,int removeAmount)
+        private void RemoveItem(int ID, int removeAmount)
         {
             var index = GetItemIndexInBag(ID);
-            if(playerBag.itemList[index].itemAmount>removeAmount)
+            if (playerBag.itemList[index].itemAmount > removeAmount)
             {
                 var amount = playerBag.itemList[index].itemAmount - removeAmount;
                 var item = new InventoryItem { itemID = ID, itemAmount = amount };
                 playerBag.itemList[index] = item;
             }
-            else if(playerBag.itemList[index].itemAmount == removeAmount)
+            else if (playerBag.itemList[index].itemAmount == removeAmount)
             {
                 var item = new InventoryItem();
                 playerBag.itemList[index] = item;
@@ -219,6 +219,37 @@ namespace MFarm.Inventory
             AddItemAtIndex(ID, index, 1);
             EventHandler.CallUpdateInventoryUI(InventoryLocation.Player, playerBag.itemList);
         }
+
+        //新增脱出物体到地面方法
+        public void DropItemFromInventory(ItemDetails itemDetails, Vector3 dropPosition)
+        {
+            if (itemDetails != null && itemDetails.canDropped)
+            {
+                RemoveItem(itemDetails.itemID, 1);
+                EventHandler.CallInstantiateItemInScene(itemDetails.itemID, dropPosition);
+            }
+        }
+
+        //新增方法
+        public void AddItemByID(int itemID, int amount)
+        {
+            // 获取该物品在背包中的索引
+            int index = GetItemIndexInBag(itemID);
+
+            // 添加物品
+            AddItemAtIndex(itemID, index, amount);
+
+            // 打印日志确认
+            var details = GetItemDetails(itemID);
+            if (details != null)
+            {
+                Debug.Log("添加物品：" + details.itemName + " x" + amount);
+            }
+
+            // 更新UI
+            EventHandler.CallUpdateInventoryUI(InventoryLocation.Player, playerBag.itemList);
+        }
+
     }
 
 }

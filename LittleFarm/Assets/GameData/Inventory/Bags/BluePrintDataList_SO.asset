@@ -18,3 +18,4 @@ MonoBehaviour:
     - itemID: 1010
       itemAmount: 10
     buildPrefab: {fileID: 8072336239209864311, guid: 874fdffe7991c694baa8cb9071ca4a1f, type: 3}
+    buildItemID: 1014

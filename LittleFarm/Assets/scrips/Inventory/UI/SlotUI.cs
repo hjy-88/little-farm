@@ -1,4 +1,4 @@
-using MFarm.Inventory;
+ï»¿using MFarm.Inventory;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -9,18 +9,18 @@ namespace Mfarm.Inventory
     public class SlotUI : MonoBehaviour, IPointerClickHandler,IBeginDragHandler, IDragHandler, IEndDragHandler
 
     {
-        [Header("×é¼ş»ñÈ¡")]
+        [Header("ç»„ä»¶è·å–")]
         [SerializeField] private Image slotImage;
         [SerializeField] private TextMeshProUGUI amountText;
         //[SerializeField] private Image slotHighlight;
         [SerializeField] private Button button;
-        [Header("¸ñ×ÓÀàĞÍ")]
+        [Header("æ ¼å­ç±»å‹")]
         public SlotType slotType;
 
         public bool isSelected;
 
         public int slotIndex;
-        //ÎïÆ·ĞÅÏ¢    
+        //ç‰©å“ä¿¡æ¯    
         public ItemDetails itemDetails;
         public int itemAmount;
 
@@ -35,10 +35,10 @@ namespace Mfarm.Inventory
             }
         }
         /// <summary>
-        /// ¸üĞÂÎïÆ·²ÛÏÔÊ¾£¬ÉèÖÃ¶ÔÓ¦ÎïÆ·ĞÅÏ¢¡¢Í¼±ê¡¢ÊıÁ¿µÈ
+        /// æ›´æ–°ç‰©å“æ§½æ˜¾ç¤ºï¼Œè®¾ç½®å¯¹åº”ç‰©å“ä¿¡æ¯ã€å›¾æ ‡ã€æ•°é‡ç­‰
         /// </summary>
-        /// <param name="item">ÎïÆ·ÏêÇéÊı¾İ</param>
-        /// <param name="amount">ÎïÆ·ÊıÁ¿</param>
+        /// <param name="item">ç‰©å“è¯¦æƒ…æ•°æ®</param>
+        /// <param name="amount">ç‰©å“æ•°é‡</param>
         public void UpdateSlot(ItemDetails item, int amount)
         {
             itemDetails = item;
@@ -50,7 +50,7 @@ namespace Mfarm.Inventory
         }
 
         /// <summary>
-        /// ½«ÎïÆ·²Û¸üĞÂÎª¿Õ×´Ì¬£¬ÇåÀíÏÔÊ¾¡¢ÖØÖÃ½»»¥µÈ
+        /// å°†ç‰©å“æ§½æ›´æ–°ä¸ºç©ºçŠ¶æ€ï¼Œæ¸…ç†æ˜¾ç¤ºã€é‡ç½®äº¤äº’ç­‰
         /// </summary>
         public void UpdateEmptySlot()
         {
@@ -74,7 +74,7 @@ namespace Mfarm.Inventory
 
             if (slotType == SlotType.Bag)
             {
-                //Í¨ÖªÎïÆ·±»Ñ¡ÖĞµÄ×´Ì¬ºÍĞÅÏ¢
+                //é€šçŸ¥ç‰©å“è¢«é€‰ä¸­çš„çŠ¶æ€å’Œä¿¡æ¯
                 EventHandler.CallItemSelectedEvent(itemDetails, isSelected);
 
             }
@@ -111,31 +111,43 @@ namespace Mfarm.Inventory
                 var targetSlot = eventData.pointerCurrentRaycast.gameObject.GetComponent<SlotUI>();
                 int targetIndex = targetSlot.slotIndex;
 
-                // ÔÚPlayer×ÔÉí±³°ü·¶Î§ÄÚ½»»»
+                // åœ¨Playerè‡ªèº«èƒŒåŒ…èŒƒå›´å†…äº¤æ¢
                 if (slotType == SlotType.Bag && targetSlot.slotType == SlotType.Bag)
                 {
                     InventoryManager.Instance.SwapItem(slotIndex, targetIndex);
                 }
-                else if (slotType == SlotType.Shop && targetSlot.slotType == SlotType.Bag)  //Âò
+                else if (slotType == SlotType.Shop && targetSlot.slotType == SlotType.Bag)  //ä¹°
                 {
                     EventHandler.CallShowTradeUI(itemDetails, false);
                 }
-                else if (slotType == SlotType.Bag && targetSlot.slotType == SlotType.Shop)  //Âô
+                else if (slotType == SlotType.Bag && targetSlot.slotType == SlotType.Shop)  //å–
                 {
                     EventHandler.CallShowTradeUI(itemDetails, true);
                 }
             }
 
-            /*else 
+
+            //æ–°å¢æ‹–å‡ºç‰©å“åˆ°åœ°é¢çš„é€»è¾‘
+
+            else
             {
                 if (itemDetails.canDropped)
                 {
-                    //Êó±ê¶ÔÓ¦ÊÀ½çµØÍ¼×ø±ê
                     var pos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z));
-
-                    EventHandler.CallInstantiateItemInScene(itemDetails.itemID, pos);
+                    InventoryManager.Instance.DropItemFromInventory(itemDetails, pos);
                 }
-            }*/
+            }
+
+            //else 
+            //{
+            //    if (itemDetails.canDropped)
+            //    {
+            //        //é¼ æ ‡å¯¹åº”ä¸–ç•Œåœ°å›¾åæ ‡
+            //        var pos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z));
+
+            //        EventHandler.CallInstantiateItemInScene(itemDetails.itemID, pos);
+            //    }
+            //}
 
         }
     }
