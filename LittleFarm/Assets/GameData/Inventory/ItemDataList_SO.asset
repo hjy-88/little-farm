@@ -69,8 +69,8 @@ MonoBehaviour:
     itemDescription: "\u751F\u547D\u4E4B\u6E90\u7684\u5BB9\u5668\uFF0C\u6D47\u6C34\u8BA9\u4F5C\u7269\u957F\u9AD8\u9AD8\uFF0C\u7ED3\u51FA\u751C\u751C\u7684\u679C\u5B9E"
     itemUseRadius: 4
     canPickedup: 1
-    canDropped: 1
-    canCarried: 0
+    canDropped: 0
+    canCarried: 1
     itemPrice: 0
     sellPercentage: 0
   - itemID: 1006
@@ -81,8 +81,8 @@ MonoBehaviour:
     itemDescription: "\u6709\u4E9B\u6C89\u91CD\u7684\u5DE5\u5177\uFF0C\u4F46\u5B83\u662F\u780D\u6811\u7684\u597D\u5E2E\u624B~"
     itemUseRadius: 4
     canPickedup: 1
-    canDropped: 1
-    canCarried: 0
+    canDropped: 0
+    canCarried: 1
     itemPrice: 0
     sellPercentage: 0
   - itemID: 1007
@@ -117,8 +117,8 @@ MonoBehaviour:
     itemDescription: "\u5C16\u9510\u7684\u9570\u5200\uFF0C\u5272\u8349\u7684\u597D\u5E2E\u624B\u3002"
     itemUseRadius: 4
     canPickedup: 1
-    canDropped: 1
-    canCarried: 0
+    canDropped: 0
+    canCarried: 1
     itemPrice: 0
     sellPercentage: 0
   - itemID: 1010
