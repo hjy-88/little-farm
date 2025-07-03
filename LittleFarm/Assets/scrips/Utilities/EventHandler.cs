@@ -155,4 +155,10 @@ public static class EventHandler
         InitSoundEffect?.Invoke(soundDetails);
     }
 
+    public static event Action<SoundName> PlaySoundEvent;
+    public static void CallPlaySoundEvent(SoundName soundName)
+    {
+        PlaySoundEvent?.Invoke(soundName);
+    }
+
 }

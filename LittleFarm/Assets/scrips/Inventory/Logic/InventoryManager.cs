@@ -67,6 +67,7 @@ namespace MFarm.Inventory
 
             //更新UI
             EventHandler.CallUpdateInventoryUI(InventoryLocation.Player, playerBag.itemList);
+            EventHandler.CallPlaySoundEvent(SoundName.Pickup);
         }
         /// <summary>
         /// 检查背包是否有空位

@@ -93,7 +93,7 @@ public class AnimatorOverride : MonoBehaviour
             if (item.partType == partType)
             {
                 animatorNameDict[item.partName.ToString()].runtimeAnimatorController = item.overrideController;
-
+                //EventHandler.CallPlaySoundEvent(SoundName.Axe);
             }
         }
     }

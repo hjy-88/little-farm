@@ -33,6 +33,7 @@ public class DialogueHint : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = true;
+            EventHandler.CallPlaySoundEvent(SoundName.Meow);
             if (hintUIInstance != null) hintUIInstance.SetActive(true);
         }
     }

@@ -48,7 +48,7 @@ namespace MFarm.Inventory
                     // 添加物品到背包
                     InventoryManager.Instance.AddItem(currentItem, true);
                     // 播放音效（如果你启用了音效系统）
-                    // EventHandler.CallPlaySoundEvent(SoundName.Pickup);
+                    //EventHandler.CallPlaySoundEvent(SoundName.Pickup);
                 }
             }
         }

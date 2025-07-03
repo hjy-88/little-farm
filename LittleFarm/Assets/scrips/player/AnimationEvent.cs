@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class AnimationEvent : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void FootstepSound()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        EventHandler.CallPlaySoundEvent(SoundName.FootStepSoft);
     }
 }

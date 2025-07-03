@@ -36,10 +36,10 @@ public class Crop : MonoBehaviour
                 EventHandler.CallParticleEffectEvent(cropDetails.particleEffectType, transform.position + cropDetails.particleEffectTypePos);
             //²¥·ÅÉùÒô*/
             if (cropDetails.soundEffect != SoundName.none)
-            {
-                var soundDetails = AudioManager.Instance.soundDetailsData.GetSoundDetails(cropDetails.soundEffect);
-                EventHandler.CallInitSoundEffect(soundDetails);
-            }
+                if (cropDetails.soundEffect != SoundName.none)
+                {
+                    EventHandler.CallPlaySoundEvent(cropDetails.soundEffect);
+                }
         }
 
         if (harvestActionCount >= requireActionCount)
@@ -54,7 +54,7 @@ public class Crop : MonoBehaviour
                     anim.SetTrigger("FallingRight");
                 else
                     anim.SetTrigger("FallingLeft");
-                //EventHandler.CallPlaySoundEvent(SoundName.TreeFalling);
+                EventHandler.CallPlaySoundEvent(SoundName.TreeFalling);
                 //Debug.LogError("111");
                 StartCoroutine(HarvestAfterAnimation());
             }

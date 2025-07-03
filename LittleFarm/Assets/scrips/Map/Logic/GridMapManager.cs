@@ -147,6 +147,7 @@ namespace MFarm.Map
                     case ItemType.Seed:
                         EventHandler.CallPlantSeedEvent(itemDetails.itemID, currentTile);
                         EventHandler.CallDropItemEvent(itemDetails.itemID, mouseWorldPos,itemDetails.itemType);
+                        EventHandler.CallPlaySoundEvent(SoundName.Plant);
                         break;
                     case ItemType.Commodity:
                         EventHandler.CallDropItemEvent(itemDetails.itemID, mouseWorldPos,itemDetails.itemType);
@@ -157,11 +158,13 @@ namespace MFarm.Map
                         currentTile.canDig = false;
                         currentTile.canDropItem = false;
                         // “Ù–ß
+                        EventHandler.CallPlaySoundEvent(SoundName.Hoe);
                         break;
                     case ItemType.WaterTool:
                         SetWaterGround(currentTile);
                         currentTile.daysSinceWatered = 0;
                         // “Ù–ß
+                        EventHandler.CallPlaySoundEvent(SoundName.Water);
                         break;
                     case ItemType.ChopTool:
                         currentCrop?.ProcessToolAction(itemDetails, currentCrop.tileDetails);

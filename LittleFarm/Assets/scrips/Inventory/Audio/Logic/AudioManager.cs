@@ -30,11 +30,20 @@ public class AudioManager : Singleton<AudioManager>
     private void OnEnable()
     {
         EventHandler.AfterSceneLoadedEvent += OnAfterSceneLoadedEvent;
+        EventHandler.PlaySoundEvent += OnPlaySoundEvent;
     }
 
     private void OnDisable()
     {
         EventHandler.AfterSceneLoadedEvent -= OnAfterSceneLoadedEvent;
+        EventHandler.PlaySoundEvent -= OnPlaySoundEvent;
+    }
+
+    private void OnPlaySoundEvent(SoundName soundName)
+    {
+        var soundDetails = soundDetailsData.GetSoundDetails(soundName);
+        if (soundDetails != null)
+            EventHandler.CallInitSoundEffect(soundDetails);
     }
 
     private void OnAfterSceneLoadedEvent()
