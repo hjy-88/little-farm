@@ -236,6 +236,7 @@ public class CursorManager : MonoBehaviour
                     //待修改
                     if (currentTile.canPlaceFurniture && InventoryManager.Instance.CheckStock(currentItem.itemID) && !HaveFurnitureInRadius(bluePrintDetails))
                     {
+                        Debug.Log("可建造");
                         SetCursorValid();
                     }
 

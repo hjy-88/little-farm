@@ -45,3 +45,11 @@ MonoBehaviour:
     itemAmount: 30
   - itemID: 1028
     itemAmount: 3
+  - itemID: 1031
+    itemAmount: 20
+  - itemID: 1032
+    itemAmount: 30
+  - itemID: 1033
+    itemAmount: 20
+  - itemID: 1034
+    itemAmount: 30

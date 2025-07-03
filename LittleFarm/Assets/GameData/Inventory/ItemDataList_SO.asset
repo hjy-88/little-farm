@@ -138,7 +138,7 @@ MonoBehaviour:
     itemName: "\u6905\u5B50\u56FE\u7EB8"
     itemType: 2
     itemIcon: {fileID: -165883034, guid: 364d4969ae9ee0f4695f66ba5d1555fd, type: 3}
-    itemOnWorldSprite: {fileID: -1931543673, guid: 4e21a6fd9f05129438be304d1d5e70b3, type: 3}
+    itemOnWorldSprite: {fileID: -165883034, guid: 364d4969ae9ee0f4695f66ba5d1555fd, type: 3}
     itemDescription: "\u6839\u636E\u8FD9\u5F20\u56FE\u7EB8\uFF0C\u53EF\u4EE5\u5EFA\u9020\u6905\u5B50\uFF01"
     itemUseRadius: 1
     canPickedup: 1

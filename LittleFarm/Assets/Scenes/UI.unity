@@ -806,7 +806,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u84DD\u8272\u732B"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 670200664806b7e4d8211254f4d2cba3, type: 2}
   m_sharedMaterial: {fileID: 8218551454235132988, guid: 670200664806b7e4d8211254f4d2cba3, type: 2}
@@ -5386,7 +5386,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u4E3B\u89D2\u732B"
+  m_Text: 
 --- !u!1 &835934490
 GameObject:
   m_ObjectHideFlags: 0
@@ -6562,7 +6562,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2054182629, guid: c33a4b5ff5eade84686a0a85bdf818b1, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8589,7 +8589,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u6D4B\u8BD5"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 670200664806b7e4d8211254f4d2cba3, type: 2}
   m_sharedMaterial: {fileID: 8218551454235132988, guid: 670200664806b7e4d8211254f4d2cba3, type: 2}
@@ -9046,7 +9046,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2118947208, guid: c33a4b5ff5eade84686a0a85bdf818b1, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9668,7 +9668,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u4E3B\u89D2\u732B"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 670200664806b7e4d8211254f4d2cba3, type: 2}
   m_sharedMaterial: {fileID: 8218551454235132988, guid: 670200664806b7e4d8211254f4d2cba3, type: 2}
@@ -13893,7 +13893,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u84DD\u8272\u732B"
+  m_Text: 
 --- !u!1 &1925051756
 GameObject:
   m_ObjectHideFlags: 0
@@ -14904,7 +14904,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u6D4B\u8BD5"
+  m_Text: 
 --- !u!1 &2094035484
 GameObject:
   m_ObjectHideFlags: 0
