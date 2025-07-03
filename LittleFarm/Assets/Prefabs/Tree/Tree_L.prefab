@@ -95,7 +95,7 @@ Animator:
   m_GameObject: {fileID: 2666733299589226539}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e851933ca3bd4794e91098cc681f5264, type: 2}
+  m_Controller: {fileID: 9100000, guid: 68338356c8111314c9d7c3f87bd7f0a3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -359,6 +359,8 @@ MonoBehaviour:
     generateAtPlayerPosition: 0
     hasAnimation: 0
     hasParticalEffect: 0
+    particleEffectTypePos: {x: 0, y: 0, z: 0}
+    soundEffect: 0
   tileDetails:
     gridX: 0
     gridY: 0
