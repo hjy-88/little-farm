@@ -76,18 +76,18 @@ public class IntroSFXToggleButton : MonoBehaviour
 
     private void OnEnable()
     {
-        IntroSoundManager.OnSFXStateChanged += UpdateButtonImage;
-        UpdateButtonImage(IntroSoundManager.Instance?.IsSFXOn() ?? true);
+        SoundManager.OnSFXStateChanged += UpdateButtonImage;
+        UpdateButtonImage(SoundManager.Instance?.IsSFXOn() ?? true);
     }
 
     private void OnDisable()
     {
-        IntroSoundManager.OnSFXStateChanged -= UpdateButtonImage;
+        SoundManager.OnSFXStateChanged -= UpdateButtonImage;
     }
 
     public void OnButtonClick()
     {
-        IntroSoundManager.Instance?.ToggleSFX();
+        SoundManager.Instance?.ToggleSFX();
     }
 
     private void UpdateButtonImage(bool isOn)

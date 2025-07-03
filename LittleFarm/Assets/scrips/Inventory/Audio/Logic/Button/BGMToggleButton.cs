@@ -75,18 +75,18 @@ public class IntroBGMToggleButton : MonoBehaviour
 
     private void OnEnable()
     {
-        IntroSoundManager.OnBGMStateChanged += UpdateButtonImage;
-        UpdateButtonImage(IntroSoundManager.Instance?.IsBGMOn() ?? true);
+        SoundManager.OnBGMStateChanged += UpdateButtonImage;
+        UpdateButtonImage(SoundManager.Instance?.IsBGMOn() ?? true);
     }
 
     private void OnDisable()
     {
-        IntroSoundManager.OnBGMStateChanged -= UpdateButtonImage;
+        SoundManager.OnBGMStateChanged -= UpdateButtonImage;
     }
 
     public void OnButtonClick()
     {
-        IntroSoundManager.Instance?.ToggleBGM();
+        SoundManager.Instance?.ToggleBGM();
     }
 
     private void UpdateButtonImage(bool isOn)

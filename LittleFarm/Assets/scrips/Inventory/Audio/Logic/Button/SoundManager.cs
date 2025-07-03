@@ -312,9 +312,9 @@
 using UnityEngine;
 using UnityEngine.Audio;
 
-public class IntroSoundManager : MonoBehaviour
+public class SoundManager : MonoBehaviour
 {
-    public static IntroSoundManager Instance { get; private set; }
+    public static SoundManager Instance { get; private set; }
 
     [Header("ÒôÆµ¼ô¼­")]
     public AudioClip buttonClickSound;        // °´Å¥µã»÷ÒôĞ§

@@ -102,7 +102,7 @@ MonoBehaviour:
     itemType: 1
     itemIcon: {fileID: 1568995737, guid: 95ed2c725fbec92439db73cf9aefff5f, type: 3}
     itemOnWorldSprite: {fileID: 1568995737, guid: 95ed2c725fbec92439db73cf9aefff5f, type: 3}
-    itemDescription: "\u5C0F\u9EA6\u5C0F\u65F6\u5019\u662F\u672C\u54AA\u559C\u6B22\u7684\u732B\u8349\u957F\u5927\u4E86\u662F\u54AA\u559C\u6B22\u7684\u9762\u6761~~"
+    itemDescription: "\u5C0F\u9EA6\u5C0F\u65F6\u5019\u662F\u672C\u732B\u559C\u6B22\u7684\u732B\u8349\u957F\u5927\u4E86\u662F\u732B\u559C\u6B22\u7684\u9762\u6761~~"
     itemUseRadius: 1
     canPickedup: 1
     canDropped: 1

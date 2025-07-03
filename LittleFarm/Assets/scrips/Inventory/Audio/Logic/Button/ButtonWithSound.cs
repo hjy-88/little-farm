@@ -21,14 +21,14 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class IntroButtonWithSound : MonoBehaviour
+public class ButtonWithSound : MonoBehaviour
 {
     [Header("音效配置")]
     public bool playOnClick = true;
     public AudioClip customClickSound;
 
     private Button button;
-    private IntroSoundManager soundManager;
+    private SoundManager soundManager;
 
     void Start()
     {
@@ -39,7 +39,7 @@ public class IntroButtonWithSound : MonoBehaviour
             return;
         }
 
-        soundManager = IntroSoundManager.Instance;
+        soundManager = SoundManager.Instance;
         if (soundManager == null)
         {
             Debug.LogError("未找到IntroSoundManager实例，请先添加IntroSoundManager组件");
