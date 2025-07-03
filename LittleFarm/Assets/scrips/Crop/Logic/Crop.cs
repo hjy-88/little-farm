@@ -34,11 +34,12 @@ public class Crop : MonoBehaviour
             /*//²¥·ÅÁ£×Ó
             if (cropDetails.hasParticalEffect)
                 EventHandler.CallParticleEffectEvent(cropDetails.particleEffectType, transform.position + cropDetails.particleEffectTypePos);
-            //²¥·ÅÉùÒô
+            //²¥·ÅÉùÒô*/
             if (cropDetails.soundEffect != SoundName.none)
             {
-                EventHandler.CallPlaySoundEvent(cropDetails.soundEffect);
-            }*/
+                var soundDetails = AudioManager.Instance.soundDetailsData.GetSoundDetails(cropDetails.soundEffect);
+                EventHandler.CallInitSoundEffect(soundDetails);
+            }
         }
 
         if (harvestActionCount >= requireActionCount)

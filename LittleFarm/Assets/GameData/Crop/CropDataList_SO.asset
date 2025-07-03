@@ -38,6 +38,8 @@ MonoBehaviour:
     generateAtPlayerPosition: 1
     hasAnimation: 0
     hasParticalEffect: 0
+    particleEffectTypePos: {x: 0, y: 0, z: 0}
+    soundEffect: 6
   - seedItemID: 1007
     growthDays: 01000000020000000200000001000000
     growthPrefabs:
@@ -63,6 +65,8 @@ MonoBehaviour:
     generateAtPlayerPosition: 1
     hasAnimation: 0
     hasParticalEffect: 0
+    particleEffectTypePos: {x: 0, y: 0, z: 0}
+    soundEffect: 0
   - seedItemID: 1013
     growthDays: 02000000050000000500000005000000
     growthPrefabs:
@@ -88,6 +92,8 @@ MonoBehaviour:
     generateAtPlayerPosition: 0
     hasAnimation: 1
     hasParticalEffect: 0
+    particleEffectTypePos: {x: 0, y: 0, z: 0}
+    soundEffect: 3
   - seedItemID: 1012
     growthDays: 00000000
     growthPrefabs:
@@ -107,6 +113,8 @@ MonoBehaviour:
     generateAtPlayerPosition: 0
     hasAnimation: 0
     hasParticalEffect: 0
+    particleEffectTypePos: {x: 0, y: 0, z: 0}
+    soundEffect: 0
   - seedItemID: 1014
     growthDays: 00000000
     growthPrefabs:
@@ -126,6 +134,8 @@ MonoBehaviour:
     generateAtPlayerPosition: 0
     hasAnimation: 0
     hasParticalEffect: 0
+    particleEffectTypePos: {x: 0, y: 0, z: 0}
+    soundEffect: 0
   - seedItemID: 1017
     growthDays: 01000000020000000300000004000000
     growthPrefabs:
@@ -151,6 +161,8 @@ MonoBehaviour:
     generateAtPlayerPosition: 0
     hasAnimation: 1
     hasParticalEffect: 0
+    particleEffectTypePos: {x: 0, y: 0, z: 0}
+    soundEffect: 3
   - seedItemID: 1018
     growthDays: 01000000040000000400000004000000
     growthPrefabs:
@@ -176,6 +188,8 @@ MonoBehaviour:
     generateAtPlayerPosition: 0
     hasAnimation: 1
     hasParticalEffect: 0
+    particleEffectTypePos: {x: 0, y: 0, z: 0}
+    soundEffect: 3
   - seedItemID: 1019
     growthDays: 01000000030000000300000005000000
     growthPrefabs:
@@ -201,6 +215,8 @@ MonoBehaviour:
     generateAtPlayerPosition: 0
     hasAnimation: 1
     hasParticalEffect: 0
+    particleEffectTypePos: {x: 0, y: 0, z: 0}
+    soundEffect: 3
   - seedItemID: 1020
     growthDays: 01000000030000000400000005000000
     growthPrefabs:
@@ -226,6 +242,8 @@ MonoBehaviour:
     generateAtPlayerPosition: 0
     hasAnimation: 1
     hasParticalEffect: 0
+    particleEffectTypePos: {x: 0, y: 0, z: 0}
+    soundEffect: 3
   - seedItemID: 1021
     growthDays: 00000000
     growthPrefabs:
@@ -245,3 +263,5 @@ MonoBehaviour:
     generateAtPlayerPosition: 0
     hasAnimation: 0
     hasParticalEffect: 0
+    particleEffectTypePos: {x: 0, y: 0, z: 0}
+    soundEffect: 0

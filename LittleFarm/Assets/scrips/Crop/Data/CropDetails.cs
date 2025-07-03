@@ -51,10 +51,10 @@ public class CropDetails
     public bool hasAnimation;
     public bool hasParticalEffect;
 
-    /*public ParticleEffectType particleEffectType;
+   // public ParticleEffectType particleEffectType;
     public Vector3 particleEffectTypePos;
     public SoundName soundEffect;
-    */
+
 
     public bool CheckToolAvailable(int toolID)
     {

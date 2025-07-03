@@ -37,7 +37,7 @@ namespace MFarm.Inventory
                 spriteRenderer.sprite = itemDetails.itemOnWorldSprite != null ? itemDetails.itemOnWorldSprite : itemDetails.itemIcon;
 
                 //ÐÞ¸ÄÅö×²Ìå³ß´ç
-                Vector2 newSize = new Vector2(spriteRenderer.sprite.bounds.size.x, spriteRenderer.sprite.bounds.size.y);
+                Vector2 newSize = new Vector2(spriteRenderer.sprite.bounds.size.x * 1.2f, spriteRenderer.sprite.bounds.size.y * 1.2f);
                 coll.size = newSize;
                 coll.offset = new Vector2(0, spriteRenderer.sprite.bounds.center.y);
             }

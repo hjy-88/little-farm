@@ -149,4 +149,10 @@ public static class EventHandler
         LightShiftChangeEvent?.Invoke(season, lightShift, timeDifference);
     }
 
+    public static event Action<SoundDetails> InitSoundEffect;
+    public static void CallInitSoundEffect(SoundDetails soundDetails)
+    {
+        InitSoundEffect?.Invoke(soundDetails);
+    }
+
 }

@@ -234,7 +234,7 @@ public class CursorManager : MonoBehaviour
                     buildImage.gameObject.SetActive(true);
                     var bluePrintDetails = InventoryManager.Instance.bluePrintData.GetBluePrintDetails(currentItem.itemID);
                     //´ýÐÞ¸Ä
-                    if (currentTile./*canDig*/canPlaceFurniture && InventoryManager.Instance.CheckStock(currentItem.itemID)/*&&!HaveFurnitureInRadius(bluePrintDetails)*/)
+                    if (currentTile.canPlaceFurniture && InventoryManager.Instance.CheckStock(currentItem.itemID)&&!HaveFurnitureInRadius(bluePrintDetails))
                         SetCursorValid();
                     else
                         SetCursorInvalid();

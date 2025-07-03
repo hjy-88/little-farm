@@ -77,6 +77,7 @@ public class Player : MonoBehaviour
     {
         if(itemDetails.itemType!=ItemType.Seed&& itemDetails.itemType != ItemType.Commodity)
         {
+            Debug.Log("Playing tool animation...");
             mouseX = mouseWorldPos.x - transform.position.x;
             mouseY = mouseWorldPos.y - (transform.position.y+0.5f);
 
@@ -94,7 +95,8 @@ public class Player : MonoBehaviour
         useTool = true;
         inputDisable = true;
         yield return null;
-        foreach(var anim in animators)
+        Debug.Log("正在使用工具");
+        foreach (var anim in animators)
         {
             anim.SetTrigger("useTool");
             anim.SetFloat("InputX", mouseX);
