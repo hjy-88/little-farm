@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,8 @@ public class TimeManager : MonoBehaviour
     private int monthInSeason = 3;
     public bool gameClockPause;
     private float tikTime;
+    private float timeDifference;
+    public TimeSpan GameTime => new TimeSpan(gameHour, gameMinute, gameSecond);
     private void Awake()
     {
         NewGameTime();
@@ -16,6 +19,7 @@ public class TimeManager : MonoBehaviour
     private void Start()
     {
         EventHandler.CallGameTimeEvent(gameSecond, gameMinute, gameHour, gameDay, gameMonth, gameYear, gameSeason);
+        EventHandler.CallLightShiftChangeEvent(gameSeason, GetCurrentLightShift(), timeDifference);
     }
     public void Update()
     {
@@ -105,5 +109,25 @@ public class TimeManager : MonoBehaviour
         }
         //Debug.Log("Second:" + gameSecond + "Minute:" + gameMinute);
         EventHandler.CallGameTimeEvent(gameSecond, gameMinute, gameHour, gameDay, gameMonth, gameYear, gameSeason);
+
+        EventHandler.CallLightShiftChangeEvent(gameSeason, GetCurrentLightShift(), timeDifference);
+    }
+
+    private LightShift GetCurrentLightShift()
+    {
+        if (GameTime >= Settings.morningTime && GameTime < Settings.nightTime)
+        {
+            timeDifference = (float)(GameTime - Settings.morningTime).TotalMinutes;
+            return LightShift.Morning;
+        }
+
+        if (GameTime < Settings.morningTime || GameTime >= Settings.nightTime)
+        {
+            timeDifference = Mathf.Abs((float)(GameTime - Settings.nightTime).TotalMinutes);
+            // Debug.Log(timeDifference);
+            return LightShift.Night;
+        }
+
+        return LightShift.Morning;
     }
 }

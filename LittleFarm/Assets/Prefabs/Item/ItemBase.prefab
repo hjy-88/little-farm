@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4161024476374451082}
   - component: {fileID: 5134853871898621701}
   - component: {fileID: 6779030036715202237}
+  - component: {fileID: 8224764087335031470}
   m_Layer: 0
   m_Name: ItemBase
   m_TagString: Untagged
@@ -105,6 +106,19 @@ MonoBehaviour:
     canCarried: 0
     itemPrice: 0
     sellPercentage: 0
+--- !u!114 &8224764087335031470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1884957211104241367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d12d47b627d129c45b6db4d8f208a6e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hintUIPrefab: {fileID: 432469937579014907, guid: d4c44d7ff3a2bcf46ab54a4e6343826c, type: 3}
 --- !u!1 &2224607587558133329
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,7 +171,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -176,7 +190,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1179887317
-  m_SortingLayer: 7
+  m_SortingLayer: 11
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

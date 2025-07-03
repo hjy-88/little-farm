@@ -143,5 +143,10 @@ public static class EventHandler
         GenerateCropEvent?.Invoke();
     }
 
-    
+    public static event Action<Season, LightShift, float> LightShiftChangeEvent;
+    public static void CallLightShiftChangeEvent(Season season, LightShift lightShift, float timeDifference)
+    {
+        LightShiftChangeEvent?.Invoke(season, lightShift, timeDifference);
+    }
+
 }
