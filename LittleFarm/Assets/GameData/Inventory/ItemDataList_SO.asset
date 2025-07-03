@@ -47,7 +47,7 @@ MonoBehaviour:
     canPickedup: 1
     canDropped: 1
     canCarried: 1
-    itemPrice: 20
+    itemPrice: 30
     sellPercentage: 0.5
   - itemID: 1004
     itemName: "\u8611\u83C7"
@@ -95,7 +95,7 @@ MonoBehaviour:
     canPickedup: 1
     canDropped: 1
     canCarried: 1
-    itemPrice: 20
+    itemPrice: 40
     sellPercentage: 0.5
   - itemID: 1008
     itemName: "\u5C0F\u9EA6"
@@ -168,7 +168,7 @@ MonoBehaviour:
     canPickedup: 1
     canDropped: 0
     canCarried: 1
-    itemPrice: 20
+    itemPrice: 100
     sellPercentage: 0.5
   - itemID: 1014
     itemName: "\u6905\u5B50"
@@ -216,7 +216,7 @@ MonoBehaviour:
     canPickedup: 1
     canDropped: 0
     canCarried: 1
-    itemPrice: 20
+    itemPrice: 80
     sellPercentage: 0.5
   - itemID: 1018
     itemName: "\u6A58\u5B50\u79CD\u5B50"
@@ -228,7 +228,7 @@ MonoBehaviour:
     canPickedup: 1
     canDropped: 0
     canCarried: 1
-    itemPrice: 20
+    itemPrice: 80
     sellPercentage: 0.5
   - itemID: 1019
     itemName: "\u68A8\u79CD\u5B50"
@@ -240,7 +240,7 @@ MonoBehaviour:
     canPickedup: 1
     canDropped: 0
     canCarried: 1
-    itemPrice: 20
+    itemPrice: 80
     sellPercentage: 0.5
   - itemID: 1020
     itemName: "\u6843\u79CD\u5B50"
@@ -252,7 +252,7 @@ MonoBehaviour:
     canPickedup: 1
     canDropped: 0
     canCarried: 1
-    itemPrice: 20
+    itemPrice: 80
     sellPercentage: 0.5
   - itemID: 1021
     itemName: "\u6811\u68692"
