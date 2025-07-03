@@ -22,25 +22,25 @@ MonoBehaviour:
   - itemID: 1009
     itemAmount: 1
   - itemID: 1031
-    itemAmount: 8
+    itemAmount: 7
   - itemID: 1033
-    itemAmount: 10
+    itemAmount: 9
   - itemID: 1011
-    itemAmount: 50
-  - itemID: 0
-    itemAmount: 0
-  - itemID: 0
-    itemAmount: 0
-  - itemID: 0
-    itemAmount: 0
-  - itemID: 0
-    itemAmount: 0
-  - itemID: 0
-    itemAmount: 0
-  - itemID: 0
-    itemAmount: 0
-  - itemID: 0
-    itemAmount: 0
+    itemAmount: 44
+  - itemID: 1010
+    itemAmount: 637
+  - itemID: 1026
+    itemAmount: 800
+  - itemID: 1016
+    itemAmount: 1
+  - itemID: 1014
+    itemAmount: 2
+  - itemID: 1032
+    itemAmount: 5
+  - itemID: 1034
+    itemAmount: 5
+  - itemID: 1025
+    itemAmount: 1
   - itemID: 0
     itemAmount: 0
   - itemID: 0

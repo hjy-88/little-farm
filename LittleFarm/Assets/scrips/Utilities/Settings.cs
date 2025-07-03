@@ -5,7 +5,7 @@ using System;
 public class Settings
 {
     //public const float itemFadeDuration = 0.35f;
-    public const float secondThreshold = 0.0000000000000000001f;
+    public const float secondThreshold = 0.00000001f;
     public const int secondHold = 59;
     public const int minuteHold = 59;
     public const int hourHold = 23;
